@@ -13,13 +13,29 @@ injectGlobal`
   }
 
   * {
-    font-family: 'SignPainter',sans-serif;
     box-sizing: border-box;
   }
 
-  p {
-    font-family: Raleway, sans-serif;
+  body {
+    font-size: 18px;
+    line-height: 1.4;
     font-weight: 400;
+    font-family: Raleway, sans-serif;
+  }
+
+  p {    
+    font-weight: 400;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-family: 'SignPainter', sans-serif;
+    margin-top: 0;
+    margin-bottom: 1rem;
   }
 
 `
