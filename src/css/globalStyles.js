@@ -4,7 +4,7 @@ import fontFiles from "../fonts/fonts.js";
 
 injectGlobal`
   ${styledNormalize}
-  
+
   @font-face {
    font-family: "SignPainter";
    font-style: normal;
@@ -15,6 +15,10 @@ injectGlobal`
   * {
     font-family: 'SignPainter',sans-serif;
     box-sizing: border-box;
+  }
+
+  p {
+    font-family: Railway, sans-serif;
   }
 
 `
