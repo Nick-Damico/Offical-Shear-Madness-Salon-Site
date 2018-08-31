@@ -4,7 +4,7 @@ import fontFiles from "../fonts/fonts.js";
 
 injectGlobal`
   ${styledNormalize}
-
+  @import url('https://fonts.googleapis.com/css?family=Raleway:300,400,700');
   @font-face {
    font-family: "SignPainter";
    font-style: normal;
@@ -18,7 +18,8 @@ injectGlobal`
   }
 
   p {
-    font-family: Railway, sans-serif;
+    font-family: Raleway, sans-serif;
+    font-weight: 400;
   }
 
 `
