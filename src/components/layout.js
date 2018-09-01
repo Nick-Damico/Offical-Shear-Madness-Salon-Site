@@ -1,20 +1,23 @@
 import React from "react";
-import styled from "styled-components";
+import styled, { ThemeProvider } from "styled-components";
+import { theme } from '../css/globalStyles.js';
 
 const Wrapper = styled.div`
   display: flex;
-  background-color: tomato;
    flex-direction: column;
    align-items: center;
-   margin: 0 auto 12px auto;
-   padding: 0 1rem 0 1rem;
+   margin: 0 auto;
+   width: 100%;
+   max-width: 1200px;
    &:last-child {
      margin-bottom: 0;
    }
 `
 
 export default ({ children }) => (
-  <Wrapper>
-    { children }
-  </Wrapper>
+  <ThemeProvider theme={theme}>
+    <Wrapper>
+      { children }
+    </Wrapper>
+  </ThemeProvider>
 );

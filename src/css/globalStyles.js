@@ -2,6 +2,16 @@ import { injectGlobal } from "styled-components";
 import styledNormalize from 'styled-normalize';
 import fontFiles from "../fonts/fonts.js";
 
+export const theme = {
+  fontSignPainter: 'SignPainter',
+  primaryColor:    '#61B5C1',
+  secondaryColor:  '#C062DA',
+  linearGradient:  'linear-gradient(135deg, #c062da 0%,#61b5c1 100%)',
+  colorBlack:      '#333',
+  colorWhite:      '#fff',
+  textShadow:      '1px 1px 2px rgba(0, 0, 0, 0.88)',
+};
+
 injectGlobal`
   ${styledNormalize}
   @import url('https://fonts.googleapis.com/css?family=Raleway:300,400,700');
@@ -14,6 +24,8 @@ injectGlobal`
 
   * {
     box-sizing: border-box;
+    margin: 0;
+    padding: 0;
   }
 
   body {
@@ -23,7 +35,7 @@ injectGlobal`
     font-family: Raleway, sans-serif;
   }
 
-  p {    
+  p {
     font-weight: 400;
   }
 
