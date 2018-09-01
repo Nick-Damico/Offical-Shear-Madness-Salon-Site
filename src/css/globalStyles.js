@@ -7,6 +7,7 @@ export const theme = {
   primaryColor:    '#61B5C1',
   secondaryColor:  '#C062DA',
   linearGradient:  'linear-gradient(135deg, #c062da 0%,#61b5c1 100%)',
+  transparentGradient: 'linear-gradient(135deg, rgba(192,98,218,0.7), rgba(97, 181, 193, 0.7))',
   colorBlack:      '#333',
   colorWhite:      '#fff',
   textShadow:      '1px 1px 2px rgba(0, 0, 0, 0.88)',
@@ -28,7 +29,13 @@ injectGlobal`
     padding: 0;
   }
 
+  html,
   body {
+    height: 100%;
+  }
+
+  body {
+    position: relative;
     font-size: 18px;
     line-height: 1.4;
     font-weight: 400;

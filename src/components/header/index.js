@@ -2,10 +2,17 @@ import React from 'react';
 import styled from 'styled-components';
 // import { Link } from 'gatsby'
 import { ServiceList } from './serviceList';
+import bg from '../../images/shearmadness.png';
 
 const Header = styled.header`
   display: flex;
+  position: relative;
   background: ${props => props.theme.linearGradient};
+  background: ${props => props.theme.transparentGradient}, url(${bg});
+  background-repeat: no-repeat;
+  background-size: cover;
+  min-height: 80vh;
+  background-position: ;
   text-align: center;
   flex-direction: column;
   width: 100%;
