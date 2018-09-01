@@ -15,6 +15,9 @@ const Nav = styled.nav`
   right: 0;
   bottom: 0;
   z-index: 100;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
 
   display: flex;
   border: 2px solid ${props => props.theme.primaryColor};
@@ -22,15 +25,17 @@ const Nav = styled.nav`
   justify-content: space-between;
 
   @media (min-width: 430px) {
-    position: initial;
+    top: 0;
     border: none;
     background: transparent;
     width: 100%;
+    padding-top: 30px;
   }
 `;
 
 const MobileItem = styled.a`
   display: flex;
+  font-family: 'SignPainter', sans-serif;
   flex-direction: column;
   justify-content: center;
   align-items: center;
@@ -42,11 +47,36 @@ const MobileItem = styled.a`
 
   @media (min-width: 430px) {
     flex-direction: column-reverse;
+    background: transparent;
+    color: ${props => props.theme.colorWhite};
+    line-height: 1.5rem;
+  }
+
+  @media (min-width: 499px) {
+    font-size: 1.4rem;
+  }
+
+  @media (min-width: 699px) {
+    font-size: 1.6rem;
   }
 `;
 
 const Icon = styled.img`
   width: 40px;
+  @media (min-width: 430px) {
+    width: ${props => props.logo ? '140px' : '40px'};
+    margin-top: ${props => props.logo ? '20px' : '0px'};
+  }
+
+  @media (min-width: 499px) {
+    width: ${props => props.logo ? '175px' : '40px'};
+    margin-top: ${props => props.logo ? '20px' : '0px'};
+  }
+
+  @media (min-width: 699px) {
+    width: ${props => props.logo ? '175px' : '55px'};
+    font-size: 1.6rem;
+  }
 `;
 
 export class Navigation extends React.Component {
@@ -56,7 +86,7 @@ export class Navigation extends React.Component {
     this.handleResize = this.handleResize.bind(this);
 
     this.state = {
-      mobile: true
+      mobile: false
     }
   }
 
@@ -77,14 +107,14 @@ export class Navigation extends React.Component {
   }
 
   render() {
-    const logoItem = <MobileItem><Icon src={Logo} /></MobileItem>;
+    const logoItem = <MobileItem><Icon logo src={Logo} /></MobileItem>;
     return(
       <Nav>
-        <MobileItem><Icon src={homeIcon} />Home</MobileItem>
-        <MobileItem><Icon src={aboutIcon} />About</MobileItem>
+        <MobileItem href="#"><Icon src={homeIcon} />Home</MobileItem>
+        <MobileItem href="#"><Icon src={aboutIcon} />About</MobileItem>
         {!this.state.mobile ? logoItem : null}
-        <MobileItem><Icon src={serviceIcon} />Services</MobileItem>
-        <MobileItem><Icon src={contactIcon} />Contact</MobileItem>
+        <MobileItem href="#"><Icon src={serviceIcon} />Services</MobileItem>
+        <MobileItem href="#"><Icon src={contactIcon} />Contact</MobileItem>
       </Nav>
     )
   };

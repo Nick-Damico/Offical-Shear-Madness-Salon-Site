@@ -3,6 +3,7 @@ import styled from 'styled-components';
 // import { Link } from 'gatsby'
 import { ServiceList } from './serviceList';
 import bg from '../../images/shearmadness.png';
+import logo from '../../images/logo.svg';
 
 const Header = styled.header`
   display: flex;
@@ -11,18 +12,40 @@ const Header = styled.header`
   background: ${props => props.theme.transparentGradient}, url(${bg});
   background-repeat: no-repeat;
   background-size: cover;
-  min-height: 80vh;
-  background-position: ;
-  text-align: center;
+  background-position: center;
+
+  align-items: center;
+  justify-content: center;
   flex-direction: column;
+  min-height: 80vh;
+  text-align: center;
   width: 100%;
+
+  @media (min-width: 430px) {
+    padding-top: 80px;
+  }
 `;
 
 // Styled Components
+const MainHeading = styled.h1`
+  font-size: 0px;
+  @media (min-width: 430px) {
+    visibility: hidden;
+    height: 0;
+  }
+`;
+
+const Logo = styled.img`
+  width: 150px;
+`;
+
 const SubHeading = styled.h2`
   font-family: 'Raleway', sans-serif;
+  font-size: 1.3rem;
   font-weight: 300;
   color: ${props => props.theme.colorWhite};
+  padding-top: 2rem;
+  margin-bottom: 0;
   text-shadow: ${props => props.theme.textShadow};
 `;
 
@@ -31,6 +54,8 @@ const Motto = styled.h3`
   color: ${props => props.theme.colorWhite};
   text-shadow: ${props => props.theme.textShadow};
   letter-spacing: 1px;
+  width: 80%;
+  max-width: 450px;
   border-bottom: dashed 2px ${props => props.theme.colorWhite};
 
   @media (min-width: 500px) {
@@ -53,7 +78,7 @@ const CtaText = styled.p`
 `;
 
 const AptButton = styled.a`
-  background-color: rgba(24,224,204,0.8);
+  background-color: rgba(24,224,204,0.5);
   border-radius: 8px;
   border: 2px solid rgb(175, 64, 205);
   color: white;
@@ -64,10 +89,12 @@ const AptButton = styled.a`
   padding: 8px 10px;
   text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.88);
   width: 90%;
+  max-width: 175px;
 `;
 
 export default ({ children }) => (
   <Header>
+    <MainHeading>Shear Madness Beauty Salon<Logo src={logo}/></MainHeading>
     <SubHeading>Sevier Counties best full service beauty salon.</SubHeading>
     <Motto>"Where a Great Haircut is Priceless."</Motto>
     <ServiceList>

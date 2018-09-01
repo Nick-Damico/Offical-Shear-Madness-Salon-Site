@@ -34,6 +34,10 @@ injectGlobal`
     height: 100%;
   }
 
+  a {
+    text-decoration: none;
+  }
+
   body {
     position: relative;
     font-size: 18px;
