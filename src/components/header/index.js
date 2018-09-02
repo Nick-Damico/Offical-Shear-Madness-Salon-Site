@@ -47,19 +47,31 @@ const SubHeading = styled.h2`
   padding-top: 2rem;
   margin-bottom: 0;
   text-shadow: ${props => props.theme.textShadow};
+
+  @media (min-width: 899px) {
+    font-size: 1.5rem;
+  }
 `;
 
-const Motto = styled.h3`
+const Slogan = styled.h3`
   font-size: 1.5rem;
   color: ${props => props.theme.colorWhite};
   text-shadow: ${props => props.theme.textShadow};
   letter-spacing: 1px;
-  width: 80%;
+  width: 90%;
   max-width: 450px;
   border-bottom: dashed 2px ${props => props.theme.colorWhite};
 
   @media (min-width: 500px) {
     font-size: 2.2rem;
+  }
+  @media (min-width: 699px) {
+    font-size: 2.4rem;
+    max-width: 500px;
+  }
+  @media (min-width: 899px) {
+    font-size: 3rem;
+    max-width: 600px;
   }
 `;
 
@@ -96,7 +108,7 @@ export default ({ children }) => (
   <Header>
     <MainHeading>Shear Madness Beauty Salon<Logo src={logo}/></MainHeading>
     <SubHeading>Sevier Counties best full service beauty salon.</SubHeading>
-    <Motto>"Where a Great Haircut is Priceless."</Motto>
+    <Slogan>"Where a Great Haircut is Priceless."</Slogan>
     <ServiceList>
       <li>Bridal</li>
       <li>Make-Up</li>

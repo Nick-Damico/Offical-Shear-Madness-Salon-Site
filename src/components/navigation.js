@@ -24,7 +24,7 @@ const Nav = styled.nav`
   flex-direction: row;
   justify-content: space-between;
 
-  @media (min-width: 430px) {
+  @media (min-width: 429px) {
     top: 0;
     border: none;
     background: transparent;
@@ -44,8 +44,10 @@ const MobileItem = styled.a`
   background: white;
   width: 24.25%;
   text-align: center;
+  transition: all 500ms ease,
+              background-color 100ms;
 
-  @media (min-width: 430px) {
+  @media (min-width: 429px) {
     flex-direction: column-reverse;
     background: transparent;
     color: ${props => props.theme.colorWhite};
@@ -63,7 +65,10 @@ const MobileItem = styled.a`
 
 const Icon = styled.img`
   width: 40px;
-  @media (min-width: 430px) {
+  transition: all 500ms ease;
+
+
+  @media (min-width: 429px) {
     width: ${props => props.logo ? '140px' : '40px'};
     margin-top: ${props => props.logo ? '20px' : '0px'};
   }
@@ -74,7 +79,8 @@ const Icon = styled.img`
   }
 
   @media (min-width: 699px) {
-    width: ${props => props.logo ? '175px' : '55px'};
+    width: ${props => props.logo ? '200px' : '55px'};
+    margin-top: ${props => props.logo ? '60px' : '0px'};
     font-size: 1.6rem;
   }
 `;
