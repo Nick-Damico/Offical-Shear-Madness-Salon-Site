@@ -1,12 +1,13 @@
 import React from 'react';
 import styled from 'styled-components';
-
+// Import icons for navigation
 import homeIcon from '../images/home-icon.svg';
 import aboutIcon from '../images/about-icon.svg';
 import serviceIcon from '../images/services-icon.svg';
 import contactIcon from '../images/contact-icon.svg';
 import Logo from '../images/logo.svg';
 
+// Styled Components
 const Nav = styled.nav`
   position: absolute;
   background: ${props => props.theme.primaryColor};
@@ -85,6 +86,7 @@ const Icon = styled.img`
   }
 `;
 
+// Export of Class Component
 export class Navigation extends React.Component {
   constructor() {
     super();

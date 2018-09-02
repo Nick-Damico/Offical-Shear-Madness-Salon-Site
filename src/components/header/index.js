@@ -1,7 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
 // import { Link } from 'gatsby'
-import { ServiceList } from './serviceList';
 import bg from '../../images/shearmadness.png';
 import logo from '../../images/logo.svg';
 
@@ -20,6 +19,8 @@ const Header = styled.header`
   min-height: 80vh;
   text-align: center;
   width: 100%;
+  padding-left: 5%;
+  padding-right: 5%;
 
   @media (min-width: 430px) {
     padding-top: 80px;
@@ -58,7 +59,7 @@ const Slogan = styled.h3`
   color: ${props => props.theme.colorWhite};
   text-shadow: ${props => props.theme.textShadow};
   letter-spacing: 1px;
-  width: 90%;
+  width: 100%;
   max-width: 450px;
   border-bottom: dashed 2px ${props => props.theme.colorWhite};
 
@@ -72,6 +73,40 @@ const Slogan = styled.h3`
   @media (min-width: 899px) {
     font-size: 3rem;
     max-width: 600px;
+  }
+`;
+
+const ServiceList = styled.ul`
+  background-color: rgba(245,245,245, 0.8);
+  border-radius: 10px;
+  list-style: none;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: no-wrap;
+  align-items: center;
+  justify-content: space-around;
+  margin-bottom: 1rem;
+  max-width: 400px;
+  padding: 5px;
+  width: 100%;
+`;
+
+const ServiceItem = styled.li`
+  color: ${props => props.theme.primaryColor};
+  font-size: 1.2rem;
+  position: relative;
+
+  &:nth-child(n+2):before {
+    content: '';
+    border-radius: 50%;
+    box-shadow: 0px 1px 2px black;
+    position: absolute;
+    left: -20px;
+    top: 12px;
+    display: block;
+    width: 6px;
+    height: 6px;
+    background-color: ${props => props.theme.secondaryColor};
   }
 `;
 
@@ -100,7 +135,7 @@ const AptButton = styled.a`
   font-family: 'SignPainter', sans-serif;
   padding: 8px 10px;
   text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.88);
-  width: 90%;
+  width: 100%;
   max-width: 175px;
 `;
 
@@ -110,8 +145,10 @@ export default ({ children }) => (
     <SubHeading>Sevier Counties best full service beauty salon.</SubHeading>
     <Slogan>"Where a Great Haircut is Priceless."</Slogan>
     <ServiceList>
-      <li>Bridal</li>
-      <li>Make-Up</li>
+        <ServiceItem>Hair</ServiceItem>
+        <ServiceItem>Make-up</ServiceItem>
+        <ServiceItem>Bridal</ServiceItem>
+        <ServiceItem>Tanning</ServiceItem>
     </ServiceList>
     <CtaContainer>
       <CtaText>Make Appointment</CtaText>
