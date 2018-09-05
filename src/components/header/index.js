@@ -139,7 +139,7 @@ const AptButton = styled.a`
   max-width: 175px;
 `;
 
-export default ({ children }) => (
+export default () => (
   <Header>
     <MainHeading>Shear Madness Beauty Salon<Logo src={logo}/></MainHeading>
     <SubHeading>Sevier Counties best full service beauty salon.</SubHeading>
