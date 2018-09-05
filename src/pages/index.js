@@ -7,10 +7,12 @@ import '../css/globalStyles.js';
 import Layout from '../components/layout';
 import { Navigation } from '../components/navigation';
 import Header from '../components/header/index';
+import About from '../components/about/index';
 
 export default () => (
   <Layout>
     <Navigation />
     <Header />
+    <About />
   </Layout>
 );
