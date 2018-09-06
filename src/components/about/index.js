@@ -10,16 +10,12 @@ const AboutSection = styled.section`
 `;
 
 const CardContainer = styled.div`
-  display: flex;
-  flex-direction: row;
   justify-content: space-around;
-  flex-wrap: wrap;
-  width: 100%;
 `;
 
 export default () => (
   <AboutSection>
-    <CardContainer>
+    <CardContainer className="row">
       <ServiceCard
         title="Hair"
         image={ImageHair}
