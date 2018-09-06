@@ -8,6 +8,7 @@ const ServiceCard = styled.article`
   padding: 88px 1% 1% 2%;
   position: relative;
   border: 3px solid ${props => props.theme.colorWhite};
+  margin-bottom: calc(1% + 88px);
 `;
 
 const ServiceCardTitleDiv   = styled.div`
@@ -36,6 +37,7 @@ const ServiceCardTitle = styled.h2`
 
 const ServiceCardText  = styled.p `
   color: ${props => props.theme.colorWhite};
+  margin-top: 2%;
 `;
 
 export default (props) => {
