@@ -9,10 +9,18 @@ import { Navigation } from '../components/navigation';
 import Header from '../components/header/index';
 import About from '../components/about/index';
 
+
+const Main = styled.main`
+  display: flex;
+  width: 100%;
+`;
+
 export default () => (
   <Layout>
     <Navigation />
     <Header />
-    <About />
+    <Main >
+      <About />
+    </Main>
   </Layout>
 );
