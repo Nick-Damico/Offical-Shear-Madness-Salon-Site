@@ -62,4 +62,10 @@ injectGlobal`
     margin-bottom: 1rem;
   }
 
+  .row {
+    display: flex;
+    flex-flow: row wrap;
+    flex: 0 1 auto;
+  }
+
 `
