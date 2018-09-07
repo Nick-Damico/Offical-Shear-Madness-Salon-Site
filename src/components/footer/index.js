@@ -1,14 +1,16 @@
 import React from 'react';
 import styled from 'styled-components';
 
+import TwitterIcon from '../../images/TwitterIcon.svg';
+import InstagramIcon from '../../images/InstagramIcon.svg';
+import FacebookIcon from '../../images/FacebookIcon.svg';
+
 const Footer = styled.footer`
   background-color: ${props => props.theme.colorWhite};
   padding: 30px 0 0 0;
 `;
 
-const Row = styled.div`
-
-`;
+const Row = styled.div``;
 
 const Col = styled.div`
   flex: 0 0 92%;
@@ -22,6 +24,9 @@ const Col = styled.div`
 
   @media (min-width: 749px) {
     flex: 0 0 28%;
+    &:nth-child(2) {
+      text-align: center;
+    }
   }
 `;
 
@@ -47,6 +52,28 @@ const Copyright = styled.div`
   padding: 10px;
 `;
 
+const SocialDiv = styled.div`
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  margin: 0 auto;
+  width: 100%;
+  max-width: 200px;
+`;
+
+const SocialLink = styled.a`
+  display: block;
+  padding: 0 8px 8px;
+
+  &:hover,
+  &:active {
+    fill: pink;
+  }
+`;
+
+const SocialIcon = styled.img`
+  width: 40px;
+`;
 
 export default () => {
   const newDate = new Date();
@@ -72,6 +99,20 @@ export default () => {
         </Col>
         <Col>
           <HeadingTitle>Follow Us</HeadingTitle>
+          <SocialDiv>
+            <SocialLink href="">
+              <SocialIcon src={FacebookIcon}/>
+            </SocialLink>
+
+            <SocialLink href="">
+              <SocialIcon src={InstagramIcon}/>
+            </SocialLink>
+
+            <SocialLink href="">
+              <SocialIcon src={TwitterIcon}/>
+            </SocialLink>
+
+          </SocialDiv>
         </Col>
       </Row>
       <Copyright>
