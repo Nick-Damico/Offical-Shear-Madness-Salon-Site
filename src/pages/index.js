@@ -8,7 +8,8 @@ import Layout from '../components/layout';
 import { Navigation } from '../components/navigation';
 import Header from '../components/header/index';
 import About from '../components/about/index';
-import PhotoReviews from '../components/photoReviewGrid';
+import PhotoReviews from '../components/photoReviewGrid/index';
+import Services from '../components/services/index'
 
 
 const Main = styled.main`
@@ -24,6 +25,7 @@ export default () => (
     <Main >
       <About />
       <PhotoReviews />
+      <Services />
     </Main>
   </Layout>
 );
