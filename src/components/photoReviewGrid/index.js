@@ -2,71 +2,85 @@ import React from 'react';
 import styled from 'styled-components';
 
 const GridContainer = styled.section`
+
   display: grid;
   background-color: ${props => props.theme.colorWhite};
   grid-column-gap: 20px;
   grid-row-gap: 24px;
-  grid-template-rows: repeat(6, 1fr);
-  grid-template-columns: 3fr 3fr 2fr 4fr;
-  min-height: 580px;
-  padding: 10px 0;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: auto;
 
   .div-1 {
     grid-column: 1 / span 1;
-    grid-row: 1 / span 3;
+    grid-rows: 1 / span 1;
     width: 100%;
     height: 100%;
   }
 
-  .div-2 {
-    grid-column: 2 / span 1;
-    grid-row: 1 / span 6;
-    width: 100%;
-    height: 100%;
+  @media (min-width: 899px) {
+    grid-template-rows: repeat(6, 1fr);
+    grid-template-columns: 3fr 3fr 2fr 4fr;
+    min-height: 580px;
+    padding: 10px 0;
+
+    .div-1 {
+      grid-column: 1 / span 1;
+      grid-row: 1 / span 3;
+      width: 100%;
+      height: 100%;
+    }
+
+    .div-2 {
+      grid-column: 2 / span 1;
+      grid-row: 1 / span 6;
+      width: 100%;
+      height: 100%;
+    }
+
+    .div-3 {
+      grid-column: 3 / span 1;
+      grid-row: 1 / span 2;
+      width: 100%;
+      height: 100%;
+    }
+
+    .div-4 {
+      grid-column: 4 / span 1;
+      grid-row: 1 / span 3;
+      width: 100%;
+      height: 100%;
+    }
+
+    .div-5 {
+      grid-column: 3 / span 1;
+      grid-row: 3 / span 2;
+      background-color: crimson;
+      width: 100%;
+      height: 100%;
+    }
+
+    .div-6 {
+      grid-column: 1 / span 1;
+      grid-row: 4 / span 3;
+      width: 100%;
+      height: 100%;
+    }
+
+    .div-7 {
+      grid-column: 3 / span 1;
+      grid-row: 5 / span 2;
+      width: 100%;
+      height: 100%;
+    }
+
+    .div-8 {
+      grid-column: 4 / span 1;
+      grid-row: 4 / span 3;
+      width: 100%;
+      height: 100%;
+    }
   }
 
-  .div-3 {
-    grid-column: 3 / span 1;
-    grid-row: 1 / span 2;
-    width: 100%;
-    height: 100%;
-  }
-
-  .div-4 {
-    grid-column: 4 / span 1;
-    grid-row: 1 / span 3;
-    width: 100%;
-    height: 100%;
-  }
-
-  .div-5 {
-    grid-column: 3 / span 1;
-    grid-row: 3 / span 2;
-    background-color: crimson;
-    width: 100%;
-    height: 100%;
-  }
-
-  .div-6 {
-    grid-column: 1 / span 1;
-    grid-row: 4 / span 3;
-    width: 100%;
-    height: 100%;
-  }
-
-  .div-7 {
-    grid-column: 3 / span 1;
-    grid-row: 5 / span 2;
-    width: 100%;
-    height: 100%;
-  }
-
-  .div-8 {
-    grid-column: 4 / span 1;
-    grid-row: 4 / span 3;
-    width: 100%;
-    height: 100%;
-  }
 
 `;
 
