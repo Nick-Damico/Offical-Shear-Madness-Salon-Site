@@ -11,6 +11,7 @@ import About from '../components/about/index';
 import PhotoReviews from '../components/photoReviewGrid/index';
 import Services from '../components/services/index';
 import Location from '../components/location/index';
+import Footer from '../components/footer/index';
 
 
 const Main = styled.main`
@@ -28,6 +29,7 @@ export default () => (
       <PhotoReviews />
       <Services />
       <Location />
+      <Footer />
     </Main>
   </Layout>
 );
