@@ -8,6 +8,7 @@ export const theme = {
   secondaryColor:  '#C062DA',
   linearGradient:  'linear-gradient(135deg, #c062da 0%,#61b5c1 100%)',
   transparentGradient: 'linear-gradient(135deg, rgba(55, 241, 182, 0.40) 20%,rgba(162,0,255,0.42) 60%)',
+  darkerGradient: 'linear-gradient(135deg, rgba(55, 241, 182, 0.60) 20%,rgba(162,0,255,0.6) 60%)',
   colorBlack:      '#333',
   colorWhite:      '#fff',
   textShadow:      '1px 1px 2px rgba(0, 0, 0, 0.88)',
@@ -58,6 +59,7 @@ injectGlobal`
   h6 {
     font-family: 'SignPainter', sans-serif;
     font-weight: lighter;
+
     margin-top: 0;
     margin-bottom: 1rem;
   }
