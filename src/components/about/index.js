@@ -10,7 +10,7 @@ import HairdryerSvg from '../../images/hairdryer-graphic.svg';
 const AboutSection = styled.section`
     padding: 150px 0 0 0;
     margin-bottom: -50px;
-    width: 100%;
+    
 
     @media (min-width: 699px) {
       background: url(${HairdryerSvg}) no-repeat;
