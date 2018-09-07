@@ -8,7 +8,8 @@ import StylistPic from '../../images/stylist.png';
 import HairdryerSvg from '../../images/hairdryer-graphic.svg';
 
 const AboutSection = styled.section`
-    padding: 150px 0;
+    padding: 150px 0 0 0;
+    margin-bottom: -50px;
     width: 100%;
 
     @media (min-width: 699px) {
@@ -25,7 +26,6 @@ const StylistContainer = styled.div`
     background-color: transparent;
   }
 `;
-
 
 const TitleContainer = styled.div`
   width:100%;
@@ -90,7 +90,6 @@ export default () => (
       />
     </CardContainer>
 
-
     <StylistContainer>
       <TitleContainer>
         <SectionTitle>Stylists</SectionTitle>
@@ -110,6 +109,5 @@ export default () => (
       />
       </CardContainer>
     </StylistContainer>
-
   </AboutSection>
 );

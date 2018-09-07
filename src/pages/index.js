@@ -8,10 +8,12 @@ import Layout from '../components/layout';
 import { Navigation } from '../components/navigation';
 import Header from '../components/header/index';
 import About from '../components/about/index';
+import PhotoReviews from '../components/photoReviewGrid';
 
 
 const Main = styled.main`
   display: flex;
+  flex-direction: column;
   width: 100%;
 `;
 
@@ -21,6 +23,7 @@ export default () => (
     <Header />
     <Main >
       <About />
+      <PhotoReviews />
     </Main>
   </Layout>
 );

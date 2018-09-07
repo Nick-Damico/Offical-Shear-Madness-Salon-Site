@@ -68,4 +68,17 @@ injectGlobal`
     flex: 0 1 auto;
   }
 
+  [class*="div-"] {
+    height: 50px;
+    width: 50px;
+  }
+  .div-1 {background-color: teal}
+  .div-2 {background-color: tomato}
+  .div-3 {background-color: lightgreen}
+  .div-4 {background-color: goldenrod}
+  .div-5 {background-color: orange}
+  .div-6 {background-color: violet}
+  .div-7 {background-color: cornflowerblue}
+  .div-8 {background-color: tan}
+
 `
