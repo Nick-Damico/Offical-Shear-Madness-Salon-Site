@@ -16,7 +16,9 @@ const Header = styled.header`
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  min-height: 80vh;
+  height: 80vh;
+  min-height: 400px;
+  max-height: 690px;
   text-align: center;
   width: 100%;
   padding-left: 5%;
