@@ -7,7 +7,11 @@ import FacebookIcon from '../../images/FacebookIcon.svg';
 
 const Footer = styled.footer`
   background-color: ${props => props.theme.colorWhite};
-  padding: 30px 0 0 0;
+  padding: 30px 0 65px 0;
+
+  @media (min-width: 429px) {
+    padding-bottom: 0;
+  }
 `;
 
 const Row = styled.div``;
@@ -80,7 +84,7 @@ export default () => {
   const currentYear = newDate.getFullYear();
   return (
     <Footer>
-      <Row class="row">
+      <Row className="row">
         <Col>
           <HeadingTitle>Shear Madness</HeadingTitle>
           <FooterText>
@@ -100,18 +104,15 @@ export default () => {
         <Col>
           <HeadingTitle>Follow Us</HeadingTitle>
           <SocialDiv>
-            <SocialLink href="">
+            <SocialLink href="#">
               <SocialIcon src={FacebookIcon}/>
             </SocialLink>
-
-            <SocialLink href="">
+            <SocialLink href="#">
               <SocialIcon src={InstagramIcon}/>
             </SocialLink>
-
-            <SocialLink href="">
+            <SocialLink href="#">
               <SocialIcon src={TwitterIcon}/>
             </SocialLink>
-
           </SocialDiv>
         </Col>
       </Row>
