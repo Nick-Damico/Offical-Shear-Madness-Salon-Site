@@ -9,7 +9,7 @@ import Logo from '../images/logo.svg';
 
 // Styled Components
 const Nav = styled.nav`
-  position: absolute;
+  position: fixed;
   background: ${props => props.theme.primaryColor};
   height: 64px;
   left: 0;
@@ -26,6 +26,7 @@ const Nav = styled.nav`
   justify-content: space-between;
 
   @media (min-width: 429px) {
+    position: absolute;
     top: 0;
     border: none;
     background: transparent;
