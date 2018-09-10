@@ -2,11 +2,11 @@ import React from 'react';
 import styled from 'styled-components';
 import Info from './info';
 
-import LocationPic from '../../images/salonLocation.jpg';
+import InteriorPic from '../../images/salon-interior.jpg';
 
 const LocationContainer = styled.section`
   display: flex;
-  flex-direction: column;  
+  flex-direction: column;
 
   @media (min-width: 499px) {
     height: 500px;
@@ -21,7 +21,7 @@ const PhotoBlock = styled.div`
     display: block;
     width: 50%;
     background-color: ${props => props.theme.secondaryColor};
-    background: ${props => props.theme.transparentGradient}, url(${LocationPic}) no-repeat center;
+    background: ${props => props.theme.transparentGradient}, url(${InteriorPic}) no-repeat center;
     background-size: cover;
   }
 `;

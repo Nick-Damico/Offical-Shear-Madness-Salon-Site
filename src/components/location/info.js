@@ -1,10 +1,10 @@
 import React from 'react';
 import styled from 'styled-components';
-import LocationPic from '../../images/SalonLocation.jpg';
+import SalonInterior from '../../images/salon-interior.jpg';
 
 const InfoContainer = styled.div`
   background-color: ${props => props.theme.secondaryColor};
-  background: ${props => props.theme.darkerGradient}, url(${LocationPic}) no-repeat center;
+  background: ${props => props.theme.darkerGradient}, url(${SalonInterior}) no-repeat center;
   background-size: cover;
   display: flex;
   flex-direction: column;
