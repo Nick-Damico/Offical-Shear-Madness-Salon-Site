@@ -83,7 +83,7 @@ export default () => {
   const newDate = new Date();
   const currentYear = newDate.getFullYear();
   return (
-    <Footer>
+    <Footer id="footer">
       <Row className="row">
         <Col>
           <HeadingTitle>Shear Madness</HeadingTitle>

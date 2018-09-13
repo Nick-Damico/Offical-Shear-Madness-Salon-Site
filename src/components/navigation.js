@@ -122,8 +122,8 @@ export class Navigation extends React.Component {
         <MobileItem href="#"><Icon src={homeIcon} />Home</MobileItem>
         <MobileItem href="#"><Icon src={aboutIcon} />About</MobileItem>
         {!this.state.mobile ? logoItem : null}
-        <MobileItem href="#"><Icon src={serviceIcon} />Services</MobileItem>
-        <MobileItem href="#"><Icon src={contactIcon} />Contact</MobileItem>
+        <MobileItem href="#services"><Icon src={serviceIcon} />Services</MobileItem>
+        <MobileItem href="#contact"><Icon src={contactIcon} />Contact</MobileItem>
       </Nav>
     )
   };

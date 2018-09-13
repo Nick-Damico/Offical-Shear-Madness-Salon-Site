@@ -28,7 +28,7 @@ const PhotoBlock = styled.div`
 
 export default () => {
   return (
-    <LocationContainer>
+    <LocationContainer id="contact">
       <Info />
       <PhotoBlock />
     </LocationContainer>

@@ -52,7 +52,7 @@ const ServiceItem = styled.li`
 
 export default () => {
   return (
-    <Section>
+    <Section id="services">
       <SectionHeading>Shear Madness Services</SectionHeading>
       <Row className="row">
         <Col>
