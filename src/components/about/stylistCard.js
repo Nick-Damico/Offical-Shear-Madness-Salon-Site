@@ -64,6 +64,7 @@ const SkillsTitle = styled.h3`
 export default (props) => {
   const {profilePic, name, bio, skills} = props;
   const skillItems = skills.map((skill) => <li>{skill}</li>);
+  console.log(skills);
   return(
     <StylistCard>
       <StylistPic src={profilePic} />
