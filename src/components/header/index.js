@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import { StaticQuery } from 'gatsby';
 // import { Link } from 'gatsby'
 import bg from '../../images/shearmadness.png';
 import logo from '../../images/logo.svg';
@@ -142,19 +143,33 @@ const AptButton = styled.a`
 `;
 
 export default () => (
-  <Header>
-    <MainHeading>Shear Madness Beauty Salon<Logo src={logo}/></MainHeading>
-    <SubHeading>Sevier Counties best full service beauty salon.</SubHeading>
-    <Slogan>"Where a Great Haircut is Priceless."</Slogan>
-    <ServiceList>
+  <StaticQuery
+    query={graphql`
+      query {
+        site {
+          siteMetadata {
+            title
+            slogan
+          }
+        }
+      }
+    `
+  } render={data => (
+    <Header>
+      <MainHeading>{ data.site.siteMetadata.title }<Logo src={logo}/></MainHeading>
+      <SubHeading>Sevier Counties best full service beauty salon.</SubHeading>
+      <Slogan>{ data.site.siteMetadata.slogan }</Slogan>
+      <ServiceList>
         <ServiceItem>Hair</ServiceItem>
         <ServiceItem>Make-up</ServiceItem>
         <ServiceItem>Bridal</ServiceItem>
         <ServiceItem>Tanning</ServiceItem>
-    </ServiceList>
-    <CtaContainer>
-      <CtaText>Make Appointment</CtaText>
-      <AptButton>(865) 366-1357</AptButton>
-    </CtaContainer>
-  </Header>
+      </ServiceList>
+      <CtaContainer>
+        <CtaText>Make Appointment</CtaText>
+        <AptButton>(865) 366-1357</AptButton>
+      </CtaContainer>
+    </Header>
+  )}
+  />
 );
