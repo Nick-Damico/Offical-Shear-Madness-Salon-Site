@@ -2,8 +2,17 @@ module.exports = {
   siteMetadata: {
     title: 'Shear Madness Beauty Salon',
     slogan: '"Where a Great Haircut is Priceless."',
+
   },
   plugins: [
+    `gatsby-transformer-json`,
+    {
+      resolve: 'gatsby-source-filesystem',
+      options: {
+        name: 'data',
+        path: `${__dirname}/src/data`,
+      },
+    },
     'gatsby-plugin-react-helmet',
     {
       resolve: `gatsby-plugin-manifest`,
