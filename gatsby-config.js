@@ -1,6 +1,7 @@
 module.exports = {
   siteMetadata: {
-    title: 'Gatsby Default Starter',
+    title: 'Shear Madness Beauty Salon',
+    slogan: '"Where a Great Haircut is Priceless."',
   },
   plugins: [
     'gatsby-plugin-react-helmet',
