@@ -8,12 +8,18 @@ import ImageHair from '../../images/servicePicHair.png';
 import StylistPic from '../../images/stylist.png';
 import HairdryerSvg from '../../images/hairdryer-graphic.svg';
 
+
+const About = styled.div`
+  background-color: white;
+`;
+
 const AboutSection = styled.section `
     padding: 150px 0 0 0;
     margin-bottom: -50px;
 
 
     @media (min-width: 699px) {
+      background-color: white;
       background: url(${HairdryerSvg}) no-repeat;
       background-size: cover;
       background-position-x: 18px;
@@ -76,7 +82,9 @@ export default() => (<StaticQuery query={graphql `
           }
         }
     `
-} render={data => (<AboutSection>
+} render={data => (
+  <About>
+  <AboutSection>
     <CardContainer className="row">
       <ServiceCard title="Hair" image={ImageHair} text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed consequat
     auctor magna nec molestie.Sed blandit eros a
@@ -100,4 +108,7 @@ export default() => (<StaticQuery query={graphql `
         {data.allStylistsJson.edges.map(edge => <StylistCard profilePic={StylistPic} name={edge.node.name} bio={edge.node.bio} skills={edge.node.skills} />)}
       </CardContainer>
     </StylistContainer>
-  </AboutSection>)}/>);
+  </AboutSection>
+  </About>
+)}/>
+);
