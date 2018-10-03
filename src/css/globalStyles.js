@@ -1,6 +1,7 @@
 import { injectGlobal } from "styled-components";
 import styledNormalize from 'styled-normalize';
 import fontFiles from "../fonts/fonts.js";
+import bg from '../images/pink-dust.png';
 
 export const theme = {
   fontSignPainter: 'SignPainter',
@@ -45,6 +46,7 @@ injectGlobal`
     line-height: 1.4;
     font-weight: 400;
     font-family: Raleway, sans-serif;
+    background: url(${bg}) repeat;
   }
 
   p {
