@@ -4,7 +4,9 @@ import {StaticQuery} from 'gatsby';
 
 import ServiceCard from './serviceCard';
 import StylistCard from './stylistCard';
-import ImageHair from '../../images/servicePicHair.png';
+import HairCircle from '../../images/hair-circle.png';
+import MakeupCircle from '../../images/makeup-circle.png';
+import BridalCircle from '../../images/bridal-circle.png';
 import StylistPic from '../../images/stylist.png';
 import HairdryerSvg from '../../images/hairdryer-graphic.svg';
 
@@ -23,6 +25,7 @@ const AboutSection = styled.section `
       background: url(${HairdryerSvg}) no-repeat;
       background-size: cover;
       background-position-x: 18px;
+      border-top: 5px solid ${props => props.theme.colorWhite};
     }
 `;
 
@@ -75,6 +78,7 @@ export default() => (<StaticQuery query={graphql `
             edges {
               node {
                 name
+                title
                 bio
                 skills
               }
@@ -86,15 +90,15 @@ export default() => (<StaticQuery query={graphql `
   <About>
   <AboutSection>
     <CardContainer className="row">
-      <ServiceCard title="Hair" image={ImageHair} text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed consequat
+      <ServiceCard title="Hair" image={HairCircle} text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed consequat
     auctor magna nec molestie.Sed blandit eros a
     massa iaculis iaculis. Mauris fringilla
     nisi sit amet orci lacinia."/>
-      <ServiceCard title="Make-Up" image={ImageHair} text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed consequat
+      <ServiceCard title="Make-Up" image={MakeupCircle} text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed consequat
     auctor magna nec molestie.Sed blandit eros a
     massa iaculis iaculis. Mauris fringilla
     nisi sit amet orci lacinia."/>
-      <ServiceCard title="Bridal" image={ImageHair} text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed consequat
+      <ServiceCard title="Bridal" image={BridalCircle} text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed consequat
     auctor magna nec molestie.Sed blandit eros a
     massa iaculis iaculis. Mauris fringilla
     nisi sit amet orci lacinia."/>
@@ -105,7 +109,7 @@ export default() => (<StaticQuery query={graphql `
         <SectionTitle>Stylists</SectionTitle>
       </TitleContainer>
       <CardContainer className="row">
-        {data.allStylistsJson.edges.map(edge => <StylistCard profilePic={StylistPic} name={edge.node.name} bio={edge.node.bio} skills={edge.node.skills} />)}
+        {data.allStylistsJson.edges.map(edge => <StylistCard profilePic={StylistPic} name={edge.node.name} title={edge.node.title} bio={edge.node.bio} skills={edge.node.skills} />)}
       </CardContainer>
     </StylistContainer>
   </AboutSection>

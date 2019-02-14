@@ -53,6 +53,14 @@ const SkillsList = styled.ul`
   text-align: center;
 `;
 
+const StylistTitle = styled.h3`
+  color: ${props => props.theme.colorWhite};
+  font-family: Raleway, sans-serif;
+  font-size: 1.2rem;
+  text-align: center;
+  border-bottom: 1px solid white;
+`;
+
 const SkillsTitle = styled.h3`
   color: ${props => props.theme.colorWhite};
   font-size: 2rem;
@@ -62,20 +70,15 @@ const SkillsTitle = styled.h3`
 
 
 export default (props) => {
-  const {profilePic, name, bio, skills} = props;
+  const {profilePic, title, name, bio, skills} = props;
   const skillItems = skills.map((skill) => <li>{skill}</li>);
-  console.log(skills);
+
   return(
     <StylistCard>
       <StylistPic src={profilePic} />
       <StylistCardInner>
         <StylistName>{name}</StylistName>
-        <StylistBio>{bio}</StylistBio>
-
-        <SkillsTitle>Specialties</SkillsTitle>
-        <SkillsList>
-          {skillItems}
-        </SkillsList>
+        <StylistTitle>{title}</StylistTitle>
       </StylistCardInner>
     </StylistCard>
   )

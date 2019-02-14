@@ -42,7 +42,7 @@ const ServiceCardText  = styled.p `
 
 export default (props) => {
   const {title, image, text} = props;
-  console.log(props.image);
+
   return(
     <ServiceCard>
       <ServiceCardTitleDiv style={{ background: `url(${image}) no-repeat center` }}>
