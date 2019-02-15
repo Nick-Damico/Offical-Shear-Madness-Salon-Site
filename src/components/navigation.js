@@ -1,5 +1,8 @@
 import React from 'react';
 import styled from 'styled-components';
+import { TweenMax } from 'gsap';
+import ScrollToPlugin from "gsap/ScrollToPlugin";
+
 // Import icons for navigation
 import homeIcon from '../images/home-icon.svg';
 import aboutIcon from '../images/about-icon.svg';
@@ -100,6 +103,13 @@ export class Navigation extends React.Component {
     }
   }
 
+  scrollTo(e) {
+    e.preventDefault();
+    let target = e.target;
+    let sectionAnchor = target.getAttribute('href');
+    TweenMax.to(window, 1, {scrollTo:{y: sectionAnchor, offsetY: 0}});
+  }
+
   handleResize() {
     if(window.innerWidth > 429 && this.state.mobile) {
       this.setState({
@@ -120,11 +130,11 @@ export class Navigation extends React.Component {
     const logoItem = <MobileItem><Icon logo src={Logo} /></MobileItem>;
     return(
       <Nav>
-        <MobileItem href="#"><Icon src={homeIcon} />Home</MobileItem>
-        <MobileItem href="#"><Icon src={aboutIcon} />About</MobileItem>
+        <MobileItem onClick={this.scrollTo} href="#"><Icon src={homeIcon} />Home</MobileItem>
+        <MobileItem onClick={this.scrollTo} href="#about"><Icon src={aboutIcon} />About</MobileItem>
         {!this.state.mobile ? logoItem : null}
-        <MobileItem href="#services"><Icon src={serviceIcon} />Services</MobileItem>
-        <MobileItem href="#contact"><Icon src={contactIcon} />Contact</MobileItem>
+        <MobileItem onClick={this.scrollTo} href="#services"><Icon src={serviceIcon} />Services</MobileItem>
+        <MobileItem onClick={this.scrollTo} href="#contact"><Icon src={contactIcon} />Contact</MobileItem>
       </Nav>
     )
   };
