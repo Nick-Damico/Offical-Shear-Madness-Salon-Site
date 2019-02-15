@@ -40,7 +40,10 @@ const MainHeading = styled.h1`
 `;
 
 const Logo = styled.img`
-  width: 150px;
+  width: 300px;
+  @media(min-width: 429px) {
+    width: 150px;
+  }
 `;
 
 const SubHeading = styled.h2`

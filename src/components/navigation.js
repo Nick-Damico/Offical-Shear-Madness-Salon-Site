@@ -61,7 +61,8 @@ const MobileItem = styled.a`
   }
 
   @media (min-width: 699px) {
-    font-size: 1.6rem;
+    font-size: 2rem;
+    text-shadow: ${props => props.theme.textShadow};
   }
 `;
 
