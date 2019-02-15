@@ -1,14 +1,14 @@
-import React from 'react';
-import styled from 'styled-components';
-import { TweenMax } from 'gsap';
-import ScrollToPlugin from "gsap/ScrollToPlugin";
+import React from 'react'
+import styled from 'styled-components'
+import { TweenMax } from 'gsap'
+import ScrollToPlugin from 'gsap/ScrollToPlugin'
 
 // Import icons for navigation
-import homeIcon from '../images/home-icon.svg';
-import aboutIcon from '../images/about-icon.svg';
-import serviceIcon from '../images/services-icon.svg';
-import contactIcon from '../images/contact-icon.svg';
-import Logo from '../images/logo.svg';
+import homeIcon from '../images/home-icon.svg'
+import aboutIcon from '../images/about-icon.svg'
+import serviceIcon from '../images/services-icon.svg'
+import contactIcon from '../images/contact-icon.svg'
+import Logo from '../images/logo.svg'
 
 // Styled Components
 const Nav = styled.nav`
@@ -36,7 +36,7 @@ const Nav = styled.nav`
     width: 100%;
     padding-top: 30px;
   }
-`;
+`
 
 const MobileItem = styled.a`
   display: flex;
@@ -48,15 +48,16 @@ const MobileItem = styled.a`
   line-height: 0.5rem;
   background: white;
   width: 24.25%;
+  height: 100%;
   text-align: center;
-  transition: all 500ms ease,
-              background-color 100ms;
+  transition: all 500ms ease, background-color 100ms;
 
   @media (min-width: 429px) {
     flex-direction: column-reverse;
     background: transparent;
     color: ${props => props.theme.colorWhite};
     line-height: 1.5rem;
+    min-height: 80px;
   }
 
   @media (min-width: 499px) {
@@ -67,75 +68,92 @@ const MobileItem = styled.a`
     font-size: 2rem;
     text-shadow: ${props => props.theme.textShadow};
   }
-`;
+`
 
 const Icon = styled.img`
   width: 40px;
   transition: all 500ms ease;
 
-
   @media (min-width: 429px) {
-    width: ${props => props.logo ? '140px' : '40px'};
-    margin-top: ${props => props.logo ? '20px' : '0px'};
+    width: ${props => (props.logo ? '140px' : '40px')};
+
   }
 
   @media (min-width: 499px) {
-    width: ${props => props.logo ? '175px' : '40px'};
-    margin-top: ${props => props.logo ? '20px' : '0px'};
+    width: ${props => (props.logo ? '175px' : '40px')};
+
   }
 
   @media (min-width: 699px) {
-    width: ${props => props.logo ? '200px' : '55px'};
-    margin-top: ${props => props.logo ? '60px' : '0px'};
+    width: ${props => (props.logo ? '200px' : '55px')};
     font-size: 1.6rem;
   }
-`;
+`
 
 // Export of Class Component
 export class Navigation extends React.Component {
   constructor() {
-    super();
+    super()
 
-    this.handleResize = this.handleResize.bind(this);
+    this.handleResize = this.handleResize.bind(this)
 
     this.state = {
-      mobile: false
+      mobile: false,
     }
   }
 
   scrollTo(e) {
-    e.preventDefault();
-    let target = e.target;
-    let sectionAnchor = target.getAttribute('href');
-    TweenMax.to(window, 1, {scrollTo:{y: sectionAnchor, offsetY: 0}});
+    e.stopPropagation();
+    e.preventDefault()
+    let target = e.target
+    target = target.nodeName !== "A" ? target.parentElement : target;
+    let sectionAnchor = target.getAttribute('href')
+    
+    TweenMax.to(window, 1, { scrollTo: { y: sectionAnchor, offsetY: 0 } })
   }
 
   handleResize() {
-    if(window.innerWidth > 429 && this.state.mobile) {
+    if (window.innerWidth > 429 && this.state.mobile) {
       this.setState({
-        mobile: false
-      });
+        mobile: false,
+      })
     } else if (window.innerWidth < 430 && !this.state.mobile) {
       this.setState({
-        mobile: true
+        mobile: true,
       })
     }
   }
 
   componentDidMount() {
-    window.addEventListener('resize', this.handleResize);
+    window.addEventListener('resize', this.handleResize)
   }
 
   render() {
-    const logoItem = <MobileItem><Icon logo src={Logo} /></MobileItem>;
-    return(
+    const logoItem = (
+      <MobileItem>
+        <Icon logo src={Logo} />
+      </MobileItem>
+    )
+    return (
       <Nav>
-        <MobileItem onClick={this.scrollTo} href="#"><Icon src={homeIcon} />Home</MobileItem>
-        <MobileItem onClick={this.scrollTo} href="#about"><Icon src={aboutIcon} />About</MobileItem>
+        <MobileItem onClick={this.scrollTo} href="#">
+          <Icon src={homeIcon} />
+          Home
+        </MobileItem>
+        <MobileItem onClick={this.scrollTo} href="#about">
+          <Icon src={aboutIcon} />
+          About
+        </MobileItem>
         {!this.state.mobile ? logoItem : null}
-        <MobileItem onClick={this.scrollTo} href="#services"><Icon src={serviceIcon} />Services</MobileItem>
-        <MobileItem onClick={this.scrollTo} href="#contact"><Icon src={contactIcon} />Contact</MobileItem>
+        <MobileItem onClick={this.scrollTo} href="#services">
+          <Icon src={serviceIcon} />
+          Services
+        </MobileItem>
+        <MobileItem onClick={this.scrollTo} href="#contact">
+          <Icon src={contactIcon} />
+          Contact
+        </MobileItem>
       </Nav>
     )
-  };
-};
+  }
+}
