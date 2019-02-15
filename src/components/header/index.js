@@ -1,9 +1,9 @@
-import React from 'react';
-import styled from 'styled-components';
-import { StaticQuery } from 'gatsby';
+import React, { Component } from 'react'
+import styled from 'styled-components'
+import { StaticQuery } from 'gatsby'
 // import { Link } from 'gatsby'
-import bg from '../../images/shearmadness.png';
-import logo from '../../images/logo.svg';
+import bg from '../../images/shearmadness.png'
+import logo from '../../images/logo.svg'
 
 const Header = styled.header`
   display: flex;
@@ -28,7 +28,7 @@ const Header = styled.header`
   @media (min-width: 430px) {
     padding-top: 80px;
   }
-`;
+`
 
 // Styled Components
 const MainHeading = styled.h1`
@@ -37,14 +37,14 @@ const MainHeading = styled.h1`
     visibility: hidden;
     height: 0;
   }
-`;
+`
 
 const Logo = styled.img`
   width: 300px;
-  @media(min-width: 429px) {
+  @media (min-width: 429px) {
     width: 150px;
   }
-`;
+`
 
 const SubHeading = styled.h2`
   font-family: 'Raleway', sans-serif;
@@ -58,7 +58,7 @@ const SubHeading = styled.h2`
   @media (min-width: 899px) {
     font-size: 1.5rem;
   }
-`;
+`
 
 const Slogan = styled.h3`
   font-size: 1.5rem;
@@ -80,10 +80,10 @@ const Slogan = styled.h3`
     font-size: 3rem;
     max-width: 600px;
   }
-`;
+`
 
 const ServiceList = styled.ul`
-  background-color: rgba(245,245,245, 0.8);
+  background-color: rgba(245, 245, 245, 0.8);
   border-radius: 10px;
   list-style: none;
   display: flex;
@@ -95,14 +95,14 @@ const ServiceList = styled.ul`
   max-width: 400px;
   padding: 5px;
   width: 100%;
-`;
+`
 
 const ServiceItem = styled.li`
   color: ${props => props.theme.primaryColor};
   font-size: 1.2rem;
   position: relative;
 
-  &:nth-child(n+2):before {
+  &:nth-child(n + 2):before {
     content: '';
     border-radius: 50%;
     box-shadow: 0px 1px 2px black;
@@ -114,7 +114,7 @@ const ServiceItem = styled.li`
     height: 6px;
     background-color: ${props => props.theme.secondaryColor};
   }
-`;
+`
 
 const CtaContainer = styled.div`
   width: 60%;
@@ -122,16 +122,16 @@ const CtaContainer = styled.div`
   flex-direction: column;
   align-items: center;
   margin: 0 auto 2rem auto;
-`;
+`
 
 const CtaText = styled.p`
   color: white;
   text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.88);
   margin-bottom: 0.5rem;
-`;
+`
 
 const AptButton = styled.a`
-  background-color: rgba(24,224,204,0.5);
+  background-color: rgba(24, 224, 204, 0.5);
   border-radius: 8px;
   border: 2px solid rgb(175, 64, 205);
   color: white;
@@ -143,36 +143,47 @@ const AptButton = styled.a`
   text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.88);
   width: 100%;
   max-width: 175px;
-`;
+`
 
-export default () => (
-  <StaticQuery
-    query={graphql`
-      query {
-        site {
-          siteMetadata {
-            title
-            slogan
+class MainHeader extends Component {
+  render() {
+    return (
+      <StaticQuery
+        query={graphql`
+          query {
+            site {
+              siteMetadata {
+                title
+                slogan
+              }
+            }
           }
-        }
-      }
-    `
-  } render={data => (
-    <Header>
-      <MainHeading>{ data.site.siteMetadata.title }<Logo src={logo}/></MainHeading>
-      <SubHeading>Sevier Counties best full service beauty salon.</SubHeading>
-      <Slogan>{ data.site.siteMetadata.slogan }</Slogan>
-      <ServiceList>
-        <ServiceItem>Hair</ServiceItem>
-        <ServiceItem>Make-up</ServiceItem>
-        <ServiceItem>Bridal</ServiceItem>
-        <ServiceItem>Tanning</ServiceItem>
-      </ServiceList>
-      <CtaContainer>
-        <CtaText>Make Appointment</CtaText>
-        <AptButton>(865) 366-1357</AptButton>
-      </CtaContainer>
-    </Header>
-  )}
-  />
-);
+        `}
+        render={data => (
+          <Header>
+            <MainHeading>
+              {data.site.siteMetadata.title}
+              <Logo src={logo} />
+            </MainHeading>
+            <SubHeading>
+              Sevier Counties best full service beauty salon.
+            </SubHeading>
+            <Slogan>{data.site.siteMetadata.slogan}</Slogan>
+            <ServiceList>
+              <ServiceItem>Hair</ServiceItem>
+              <ServiceItem>Make-up</ServiceItem>
+              <ServiceItem>Bridal</ServiceItem>
+              <ServiceItem>Tanning</ServiceItem>
+            </ServiceList>
+            <CtaContainer>
+              <CtaText>Make Appointment</CtaText>
+              <AptButton>(865) 366-1357</AptButton>
+            </CtaContainer>
+          </Header>
+        )}
+      />
+    );
+  };
+};
+
+export default MainHeader
