@@ -108,7 +108,7 @@ export class Navigation extends React.Component {
     let target = e.target
     target = target.nodeName !== "A" ? target.parentElement : target;
     let sectionAnchor = target.getAttribute('href')
-    
+
     TweenMax.to(window, 1, { scrollTo: { y: sectionAnchor, offsetY: 0 } })
   }
 
@@ -136,7 +136,7 @@ export class Navigation extends React.Component {
     )
     return (
       <Nav>
-        <MobileItem onClick={this.scrollTo} href="#">
+        <MobileItem onClick={this.scrollTo} href="#home">
           <Icon src={homeIcon} />
           Home
         </MobileItem>
