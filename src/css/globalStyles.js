@@ -1,28 +1,32 @@
-import { injectGlobal } from "styled-components";
-import styledNormalize from 'styled-normalize';
-import fontFiles from "../fonts/fonts.js";
-import bg from '../images/pink-dust.png';
+import { injectGlobal } from 'styled-components'
+import styledNormalize from 'styled-normalize'
+import fontFiles from '../fonts/fonts.js'
+import bg from '../images/pink-dust.png'
 
 export const theme = {
   fontSignPainter: 'SignPainter',
-  primaryColor:    '#61B5C1',
-  secondaryColor:  '#C062DA',
-  linearGradient:  'linear-gradient(135deg, #c062da 0%,#61b5c1 100%)',
-  transparentGradient: 'linear-gradient(135deg, rgba(55, 241, 182, 0.3) 20%,rgba(162,0,255,0.3) 60%)',
-  darkerGradient: 'linear-gradient(135deg, rgba(55, 241, 182, 0.60) 20%,rgba(162,0,255,0.6) 60%)',
-  colorBlack:      '#333',
-  colorWhite:      '#fff',
-  textShadow:      '1px 1px 2px rgba(0, 0, 0, 0.88)',
-};
+  primaryColor: '#61B5C1',
+  secondaryColor: '#C062DA',
+  linearGradient: 'linear-gradient(135deg, #c062da 0%,#61b5c1 100%)',
+  transparentGradient:
+    'linear-gradient(135deg, rgba(55, 241, 182, 0.3) 20%,rgba(162,0,255,0.3) 60%)',
+  darkerGradient:
+    'linear-gradient(135deg, rgba(55, 241, 182, 0.60) 20%,rgba(162,0,255,0.6) 60%)',
+  colorBlack: '#333',
+  colorWhite: '#fff',
+  textShadow: '1px 1px 2px rgba(0, 0, 0, 0.88)',
+}
 
 injectGlobal`
   ${styledNormalize}
-  @import url('https://fonts.googleapis.com/css?family=Raleway:300,400,700');
+  @import url('https://fonts.googleapis.com/css?family=Raleway:100,300,400,700');
   @font-face {
    font-family: "SignPainter";
    font-style: normal;
    font-weight: normal;
-   src: local("Sign Painter"), local("Sign-Painter"), url(${fontFiles.SignPainterTTF}) format("ttf");
+   src: local("Sign Painter"), local("Sign-Painter"), url(${
+     fontFiles.SignPainterTTF
+   }) format("ttf");
   }
 
   * {
