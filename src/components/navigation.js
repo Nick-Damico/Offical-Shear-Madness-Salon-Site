@@ -22,6 +22,7 @@ const Nav = styled.nav`
   width: 100%;
   max-width: 1200px;
   margin: 0 auto;
+  opacity: 0;
 
   display: flex;
   border: 2px solid ${props => props.theme.primaryColor};
@@ -30,7 +31,7 @@ const Nav = styled.nav`
 
   @media (min-width: 429px) {
     position: absolute;
-    top: 0;
+    top: -20px;
     border: none;
     background: transparent;
     width: 100%;
@@ -96,12 +97,14 @@ export class Navigation extends React.Component {
     super()
 
     this.handleResize = this.handleResize.bind(this)
+    this.nav = React.createRef();
 
     this.state = {
       mobile: false,
     }
   }
 
+  // Handles scrolling to Section on Naviation Item click.
   scrollTo(e) {
     e.stopPropagation();
     e.preventDefault()
@@ -126,6 +129,8 @@ export class Navigation extends React.Component {
 
   componentDidMount() {
     window.addEventListener('resize', this.handleResize)
+    // GSAP Animation for Navigation bar and logo.
+    TweenMax.to(this.nav.current, 1, { opacity: 1, top: 0, delay: 0.5});
   }
 
   render() {
@@ -135,7 +140,7 @@ export class Navigation extends React.Component {
       </MobileItem>
     )
     return (
-      <Nav>
+      <Nav innerRef={this.nav}>
         <MobileItem onClick={this.scrollTo} href="#home">
           <Icon src={homeIcon} />
           Home

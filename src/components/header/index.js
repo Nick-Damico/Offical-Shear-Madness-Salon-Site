@@ -2,7 +2,6 @@ import React, { Component } from 'react'
 import styled from 'styled-components'
 import { StaticQuery } from 'gatsby'
 import { TweenMax } from 'gsap/TweenMax'
-// import { Link } from 'gatsby'
 import bg from '../../images/shearmadness.png'
 import logo from '../../images/logo.svg'
 
@@ -164,8 +163,8 @@ class MainHeader extends Component {
   }
 
   componentDidMount() {
-    TweenMax.to(this.textContainer, 1.3, { opacity: 1, delay: 1});
-    TweenMax.to(this.CTA.current, 1, { opacity: 1, bottom: 0, delay: 2.3 });
+    TweenMax.to(this.textContainer, 1.3, { opacity: 1, delay: 1.5});
+    TweenMax.to(this.CTA.current, 1, { opacity: 1, bottom: 0, delay: 3 });
   }
 
   render() {
