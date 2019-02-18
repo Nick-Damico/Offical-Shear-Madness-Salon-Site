@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import styled from 'styled-components'
 import { StaticQuery } from 'gatsby'
+import { TweenMax } from 'gsap/TweenMax'
 // import { Link } from 'gatsby'
 import bg from '../../images/shearmadness.png'
 import logo from '../../images/logo.svg'
@@ -17,7 +18,7 @@ const Header = styled.header`
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  height: 80vh;
+  height: 90vh;
   min-height: 400px;
   max-height: 690px;
   text-align: center;
@@ -117,6 +118,9 @@ const ServiceItem = styled.li`
 `
 
 const CtaContainer = styled.div`
+  position: relative;
+  bottom: -15px;
+  opacity: 0;
   width: 60%;
   display: flex;
   flex-direction: column;
@@ -144,8 +148,26 @@ const AptButton = styled.a`
   width: 100%;
   max-width: 175px;
 `
+const textContainer = {
+  opacity: 0,
+  display: 'flex',
+  flexDirection: 'column',
+  alignItems: 'center'
+};
 
 class MainHeader extends Component {
+  constructor() {
+    super()
+
+    this.textContainer = null;
+    this.CTA = React.createRef();
+  }
+
+  componentDidMount() {
+    TweenMax.to(this.textContainer, 1.3, { opacity: 1, delay: 1});
+    TweenMax.to(this.CTA.current, 1, { opacity: 1, bottom: 0, delay: 2.3 });
+  }
+
   render() {
     return (
       <StaticQuery
@@ -160,30 +182,32 @@ class MainHeader extends Component {
           }
         `}
         render={data => (
-          <Header>
+          <Header id="home" className="main-header">
             <MainHeading>
               {data.site.siteMetadata.title}
               <Logo src={logo} />
             </MainHeading>
-            <SubHeading>
-              Sevier Counties best full service beauty salon.
-            </SubHeading>
-            <Slogan>{data.site.siteMetadata.slogan}</Slogan>
-            <ServiceList>
-              <ServiceItem>Hair</ServiceItem>
-              <ServiceItem>Make-up</ServiceItem>
-              <ServiceItem>Bridal</ServiceItem>
-              <ServiceItem>Tanning</ServiceItem>
-            </ServiceList>
-            <CtaContainer>
+            <div style={textContainer} ref={div => (this.textContainer = div)}>
+              <SubHeading>
+                Sevier Counties best full service beauty salon.
+              </SubHeading>
+              <Slogan>{data.site.siteMetadata.slogan}</Slogan>
+              <ServiceList>
+                <ServiceItem>Hair</ServiceItem>
+                <ServiceItem>Make-up</ServiceItem>
+                <ServiceItem>Bridal</ServiceItem>
+                <ServiceItem>Tanning</ServiceItem>
+              </ServiceList>
+            </div>
+            <CtaContainer innerRef={this.CTA}>
               <CtaText>Make Appointment</CtaText>
               <AptButton>(865) 366-1357</AptButton>
             </CtaContainer>
           </Header>
         )}
       />
-    );
-  };
-};
+    )
+  }
+}
 
 export default MainHeader
