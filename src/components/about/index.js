@@ -1,7 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
 import { StaticQuery } from 'gatsby'
-
+import AboutIntro from './AboutIntro'
 import ServiceCard from './serviceCard'
 import StylistCard from './stylistCard'
 import HairCircle from '../../images/hair-circle.png'
@@ -87,6 +87,7 @@ export default () => (
     `}
     render={data => (
       <About id="about">
+        <AboutIntro />
         <AboutSection>
           <CardContainer className="row">
             <ServiceCard
