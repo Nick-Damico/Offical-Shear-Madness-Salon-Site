@@ -17,7 +17,7 @@ const Header = styled.header`
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  height: 90vh;
+  height: 96vh;
   min-height: 400px;
   max-height: 690px;
   text-align: center;
@@ -163,8 +163,8 @@ class MainHeader extends Component {
   }
 
   componentDidMount() {
-    TweenMax.to(this.textContainer, 1.3, { opacity: 1, delay: 1.5});
-    TweenMax.to(this.CTA.current, 1, { opacity: 1, bottom: 0, delay: 3 });
+    TweenMax.to(this.textContainer, 1.3, { opacity: 1, delay: 2});
+    TweenMax.to(this.CTA.current, 1, { opacity: 1, bottom: 0, delay: 3.3 });
   }
 
   render() {
