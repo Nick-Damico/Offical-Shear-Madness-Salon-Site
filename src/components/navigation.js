@@ -31,7 +31,7 @@ const Nav = styled.nav`
 
   @media (min-width: 429px) {
     position: absolute;
-    top: -20px;
+    top: 0;
     border: none;
     background: transparent;
     width: 100%;
@@ -128,9 +128,13 @@ export class Navigation extends React.Component {
   }
 
   componentDidMount() {
-    window.addEventListener('resize', this.handleResize)
-    // GSAP Animation for Navigation bar and logo.
-    TweenMax.to(this.nav.current, 1, { opacity: 1, top: 0, delay: 0.5});
+    window.addEventListener('resize', this.handleResize);
+    if (window.innerWidth < 430) {
+      this.setState({
+        mobile: true,
+      });
+    }
+    TweenMax.to(this.nav.current, 1, { opacity: 1, delay: 0.8 });
   }
 
   render() {
