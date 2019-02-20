@@ -1,4 +1,12 @@
 [
-  { "name": "christin", "review": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.", "skills": ["coloring", "women's styles"] },
-  { "name": "Cassandra", "review": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.", "skills": ["bridal", "mens cuts", "coloring"] }
-]
+  {
+    "name": "Brittany",
+    "review": "
+    I absolutely love the service that they Provide.Everyone there is so sweet and work in a very timely manner!BETH,
+    she is the absolute best!I showed her a picture of what I wanted and she brought it to life.I will never go to anyone
+    else as long as I live in Tennessee!!" }, 
+    {
+      "name": "Heather",
+      "review": "My daughter had her hair done by Kristin..awesome awesome place! She loves it! Atmosphere is comfortable and the girls seem to have fun while they are doing their jobs..five star all the way!"
+    }
+  ]
