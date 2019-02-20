@@ -1,4 +1,6 @@
 import React from "react";
+import Helmet from 'react-helmet'
+import { StaticQuery, graphql } from 'gatsby'
 import styled, { ThemeProvider } from "styled-components";
 import { theme } from '../css/globalStyles.js';
 
@@ -15,9 +17,33 @@ const Wrapper = styled.div`
 `
 
 export default ({ children }) => (
-  <ThemeProvider theme={theme}>
-    <Wrapper>
-      { children }
-    </Wrapper>
-  </ThemeProvider>
+  <StaticQuery
+    query={graphql`
+      query SiteTitleQuery {
+        site {
+          siteMetadata {
+            title
+          }
+        }
+      }
+    `}
+    render={data => (
+      <>
+        <Helmet
+          title={`${data.site.siteMetadata.title} | Full Service Beauty Salon serving Gatlinburg, Pigeon Forge, Sevierville, and all of Sevier County.`}
+          meta={[
+            { name: 'description', content: 'Full Service Beauty Salon serving Gatlinburg, Pigeon Forge, Sevierville, and all of Sevier County. Hair Styles and cuts for everyone, hair highlights and coloring, bridal, waxing, tanning, and more.' },
+            { name: 'keywords', content: 'sample, something' },
+          ]}
+        >
+          <html lang="en" />
+        </Helmet>
+        <ThemeProvider theme={theme}>
+          <Wrapper>
+            { children }
+          </Wrapper>
+        </ThemeProvider>
+      </>
+    )}
+  />
 );
