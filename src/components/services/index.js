@@ -64,7 +64,7 @@ const Section = styled.section`
   text-align: center;
 
   @media (min-width: 695px) {
-    margin: 30px 40px;
+    margin: 50px 40px;
   }
 `
 
