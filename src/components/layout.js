@@ -1,19 +1,22 @@
-import React from "react";
+import React from 'react'
 import Helmet from 'react-helmet'
 import { StaticQuery, graphql } from 'gatsby'
-import styled, { ThemeProvider } from "styled-components";
-import { theme } from '../css/globalStyles.js';
+import styled, { ThemeProvider } from 'styled-components'
+import { theme } from '../css/globalStyles.js'
+import { library } from "@fortawesome/fontawesome-svg-core";
+import { faEnvelopeSquare } from '@fortawesome/free-solid-svg-icons'
+library.add(faEnvelopeSquare)
 
 const Wrapper = styled.div`
   display: flex;
-   flex-direction: column;
-   align-items: center;
-   margin: 0 auto;
-   width: 100%;
-   max-width: 1800px;
-   &:last-child {
-     margin-bottom: 0;
-   }
+  flex-direction: column;
+  align-items: center;
+  margin: 0 auto;
+  width: 100%;
+  max-width: 1800px;
+  &:last-child {
+    margin-bottom: 0;
+  }
 `
 
 export default ({ children }) => (
@@ -30,20 +33,24 @@ export default ({ children }) => (
     render={data => (
       <>
         <Helmet
-          title={`${data.site.siteMetadata.title} | Full Service Beauty Salon serving Gatlinburg, Pigeon Forge, Sevierville, and all of Sevier County.`}
+          title={`${
+            data.site.siteMetadata.title
+          } | Full Service Beauty Salon serving Gatlinburg, Pigeon Forge, Sevierville, and all of Sevier County.`}
           meta={[
-            { name: 'description', content: 'Full Service Beauty Salon serving Gatlinburg, Pigeon Forge, Sevierville, and all of Sevier County. Hair Styles and cuts for everyone, hair highlights and coloring, bridal, waxing, tanning, and more.' },
+            {
+              name: 'description',
+              content:
+                'Full Service Beauty Salon serving Gatlinburg, Pigeon Forge, Sevierville, and all of Sevier County. Hair Styles and cuts for everyone, hair highlights and coloring, bridal, waxing, tanning, and more.',
+            },
             { name: 'keywords', content: 'sample, something' },
           ]}
         >
           <html lang="en" />
         </Helmet>
         <ThemeProvider theme={theme}>
-          <Wrapper>
-            { children }
-          </Wrapper>
+          <Wrapper>{children}</Wrapper>
         </ThemeProvider>
       </>
     )}
   />
-);
+)
