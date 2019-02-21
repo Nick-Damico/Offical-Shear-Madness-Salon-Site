@@ -23,7 +23,6 @@ const AboutSection = styled.section`
     background: url(${HairdryerSvg}) no-repeat;
     background-size: cover;
     background-position-x: 18px;
-    border-top: 5px solid ${props => props.theme.colorWhite};
   }
 `
 
