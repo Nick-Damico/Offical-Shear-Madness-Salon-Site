@@ -184,7 +184,7 @@ class MainHeader extends Component {
           <Header id="home" className="main-header">
             <MainHeading>
               {data.site.siteMetadata.title}
-              <Logo src={logo} />
+              <Logo src={logo} alt="Shear Madness Beauty Salon" />
             </MainHeading>
             <div style={textContainer} ref={div => (this.textContainer = div)}>
               <SubHeading>

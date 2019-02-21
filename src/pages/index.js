@@ -30,7 +30,7 @@ export default () => (
       <Services />
       <Location />
       <GoogleMap />
-      <Footer />
     </Main>
+    <Footer />
   </Layout>
 )

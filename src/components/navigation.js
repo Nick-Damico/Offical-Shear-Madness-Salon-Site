@@ -139,8 +139,8 @@ export class Navigation extends React.Component {
 
   render() {
     const logoItem = (
-      <MobileItem>
-        <Icon logo src={Logo} />
+      <MobileItem href="#home">
+        <Icon logo src={Logo} alt="Shear Madness Beauty Salon" />
       </MobileItem>
     )
     return (

@@ -75,7 +75,7 @@ export default (props) => {
 
   return(
     <StylistCard>
-      <StylistPic src={profilePic} />
+      <StylistPic src={profilePic} alt={`Stylist ${name}`} />
       <StylistCardInner>
         <StylistName>{name}</StylistName>
         <StylistTitle>{title}</StylistTitle>
