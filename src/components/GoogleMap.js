@@ -15,6 +15,7 @@ const GoogleMap = props => {
         scrolling="no"
         marginheight="0"
         marginwidth="0"
+        name="Google Map of Shear Madness Beauty Salon location"
       >
         <a href="https://www.maps.ie/map-my-route/">Map a route</a>
       </Frame>
