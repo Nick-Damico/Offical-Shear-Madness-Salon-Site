@@ -146,20 +146,20 @@ export class Navigation extends React.Component {
     return (
       <Nav innerRef={this.nav}>
         <MobileItem onClick={this.scrollTo} href="#home">
-          <Icon src={homeIcon} />
+          <Icon src={homeIcon} alt="" />
           Home
         </MobileItem>
         <MobileItem onClick={this.scrollTo} href="#about">
-          <Icon src={aboutIcon} />
+          <Icon src={aboutIcon} alt="" />
           About
         </MobileItem>
         {!this.state.mobile ? logoItem : null}
         <MobileItem onClick={this.scrollTo} href="#services">
-          <Icon src={serviceIcon} />
+          <Icon src={serviceIcon} alt="" />
           Services
         </MobileItem>
         <MobileItem onClick={this.scrollTo} href="#contact">
-          <Icon src={contactIcon} />
+          <Icon src={contactIcon} alt="" />
           Contact
         </MobileItem>
       </Nav>
