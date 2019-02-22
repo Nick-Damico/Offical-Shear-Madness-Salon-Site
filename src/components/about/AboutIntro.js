@@ -22,6 +22,7 @@ const AboutText = styled.p`
   width: 90%;
   margin: 0 auto;
   padding-bottom: 40px;
+  opacity: 0;
 `
 
 const FirstCharacter = styled.span`
@@ -46,6 +47,32 @@ const Heading = styled.h2`
 `
 
 class AboutIntro extends Component {
+  constructor() {
+    super();
+
+    this.text = React.createRef();
+    this.animateText = this.animateText.bind(this);
+  }
+
+  animateText(entries, self) {
+    if (entries[0].intersectionRatio === 1) {
+      TweenMax.to(this.text.current, 1.3, { opacity: 1, delay: 0.5});
+      self.unobserve(entries[0].target);
+    }
+  }
+
+  componentDidMount() {
+    let options = {
+      root: null,
+      rootMargin: '0px',
+      threshold: 1.0
+    }
+
+    let observer = new IntersectionObserver(this.animateText, options);
+    let target = document.querySelector('#about-intro');
+    observer.observe(target);
+  }
+
   render() {
     return (
       <AboutIntroSection id="about-intro">
@@ -58,7 +85,7 @@ class AboutIntro extends Component {
           }}
         >
           <Heading>Welcome to Shear Madness Salon</Heading>
-          <AboutText>
+          <AboutText innerRef={this.text}>
             <FirstCharacter>S</FirstCharacter>
             <ColorText>hear Madness Salon</ColorText> specializes in advanced
             hair cutting, coloring, & styling. We are experts in bridal services
