@@ -118,8 +118,6 @@ const ServiceItem = styled.li`
 
 const CtaContainer = styled.div`
   position: relative;
-  bottom: -15px;
-  opacity: 0;
   width: 60%;
   display: flex;
   flex-direction: column;
@@ -148,23 +146,32 @@ const AptButton = styled.a`
   max-width: 175px;
 `
 const textContainer = {
-  opacity: 0,
   display: 'flex',
   flexDirection: 'column',
-  alignItems: 'center'
-};
+  alignItems: 'center',
+}
 
 class MainHeader extends Component {
   constructor() {
     super()
 
-    this.textContainer = null;
-    this.CTA = React.createRef();
+    this.textContainer = null
+    this.CTA = React.createRef()
   }
 
   componentDidMount() {
-    TweenMax.to(this.textContainer, 1.3, { opacity: 1, delay: 2});
-    TweenMax.to(this.CTA.current, 1, { opacity: 1, bottom: 0, delay: 3.3 });
+    TweenMax.fromTo(
+      this.textContainer,
+      1.3,
+      { opacity: 0 },
+      { opacity: 1, delay: 2 }
+    )
+    TweenMax.fromTo(
+      this.CTA.current,
+      1,
+      { opacity: 0, bottom: -15 },
+      { opacity: 1, bottom: 0, delay: 3.3 }
+    )
   }
 
   render() {
