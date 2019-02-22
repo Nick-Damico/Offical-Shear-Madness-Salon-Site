@@ -1,10 +1,11 @@
 import React, { Component } from 'react'
 import styled from 'styled-components'
 import { Controller, Scene } from 'react-scrollmagic'
-import { TweenMax } from 'gsap/TweenMax'
+import { TweenMax, Power1 } from 'gsap/TweenMax'
 import bg from '../../images/about-intro-bgv.png'
 
 const AboutIntroSection = styled.section`
+  overflow-y: hidden;
   background: url(${bg}) no-repeat center;
   background-size: cover;
   margin: 0 0 -4px 0;
@@ -51,12 +52,14 @@ class AboutIntro extends Component {
     super();
 
     this.text = React.createRef();
+    this.textCard = React.createRef();
     this.animateText = this.animateText.bind(this);
   }
 
   animateText(entries, self) {
     if (entries[0].intersectionRatio === 1) {
-      TweenMax.to(this.text.current, 1.3, { opacity: 1, delay: 0.5});
+      TweenMax.to(this.textCard.current, 1.2, {bottom: 0, delay: 0.5, ease: Power1.easeInandOut});
+      TweenMax.to(this.text.current, 1.3, { opacity: 1, delay: 1.6});
       self.unobserve(entries[0].target);
     }
   }
@@ -77,11 +80,14 @@ class AboutIntro extends Component {
     return (
       <AboutIntroSection id="about-intro">
         <div
+          ref={this.textCard}
           style={{
             backgroundColor: 'rgba(255, 255, 255, 0.87)',
             margin: '0 auto',
             width: '90%',
             maxWidth: '800px',
+            bottom: '-300px',
+            position: 'relative',
           }}
         >
           <Heading>Welcome to Shear Madness Salon</Heading>
