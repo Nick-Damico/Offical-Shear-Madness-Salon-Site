@@ -32,6 +32,7 @@ module.exports = {
         trackingId: 'UA-XXXXXXXXX-X',
       },
     },
+    `gatsby-plugin-polyfill-io`,
     'gatsby-plugin-offline',
     'gatsby-plugin-styled-components',
   ],
