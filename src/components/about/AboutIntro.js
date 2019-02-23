@@ -23,7 +23,6 @@ const AboutText = styled.p`
   width: 90%;
   margin: 0 auto;
   padding-bottom: 40px;
-  opacity: 0;
 `
 
 const FirstCharacter = styled.span`
@@ -49,18 +48,20 @@ const Heading = styled.h2`
 
 class AboutIntro extends Component {
   constructor() {
-    super();
+    super()
 
-    this.text = React.createRef();
-    this.textCard = React.createRef();
-    this.animateText = this.animateText.bind(this);
+    this.text = React.createRef()
+    this.textCard = React.createRef()
+    this.tM1 = null
+    this.tM2 = null
+    this.animateText = this.animateText.bind(this)
   }
 
   animateText(entries, self) {
     if (entries[0].intersectionRatio === 1) {
-      TweenMax.to(this.textCard.current, 1.2, {bottom: 0, delay: 0.5, ease: Power1.easeInandOut});
-      TweenMax.to(this.text.current, 1.3, { opacity: 1, delay: 1.6});
-      self.unobserve(entries[0].target);
+      this.tM1.play()
+      this.tM2.play()
+      self.unobserve(entries[0].target)
     }
   }
 
@@ -68,12 +69,24 @@ class AboutIntro extends Component {
     let options = {
       root: null,
       rootMargin: '0px',
-      threshold: 1.0
+      threshold: 1.0,
     }
 
-    let observer = new IntersectionObserver(this.animateText, options);
-    let target = document.querySelector('#about-intro');
-    observer.observe(target);
+    this.tM1 = TweenMax.fromTo(
+      this.textCard.current,
+      1.2,
+      { bottom: -300 },
+      { bottom: 0, delay: 0.5, ease: Power1.easeOut }
+    ).pause()
+    this.tM2 = TweenMax.fromTo(
+      this.text.current,
+      1.3,
+      { opacity: 0 },
+      { opacity: 1, delay: 1.6 }
+    ).pause()
+    let observer = new IntersectionObserver(this.animateText, options)
+    let target = document.querySelector('#about-intro')
+    observer.observe(target)
   }
 
   render() {
@@ -86,7 +99,6 @@ class AboutIntro extends Component {
             margin: '0 auto',
             width: '90%',
             maxWidth: '800px',
-            bottom: '-300px',
             position: 'relative',
           }}
         >
@@ -99,7 +111,8 @@ class AboutIntro extends Component {
             We consistently deliver precision haircuts and expert color services
             to our clientele. Our staff bring their own skills and specialties,
             making our work creative, exciting and individually tailored to each
-            client. Serving Gatlinburg, Pigeon Forge, Sevierville and all of Sevier County.
+            client. Serving Gatlinburg, Pigeon Forge, Sevierville and all of
+            Sevier County.
           </AboutText>
         </div>
       </AboutIntroSection>
