@@ -1,6 +1,5 @@
 import React, { Component } from 'react'
 import styled from 'styled-components'
-import { Controller, Scene } from 'react-scrollmagic'
 import { TweenMax, Power1 } from 'gsap/TweenMax'
 import bg from '../../images/about-intro-bgv.png'
 
