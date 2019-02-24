@@ -1,7 +1,8 @@
-import React from 'react';
-import styled from 'styled-components';
+import React, { Component } from 'react'
+import styled from 'styled-components'
+import { TweenMax, Power1 } from 'gsap/TweenMax'
 
-const ServiceCard = styled.article`
+const ServiceCardDiv = styled.article`
   background-color: ${props => props.theme.primaryColor};
   max-width: 350px;
   min-width: 300px;
@@ -9,9 +10,9 @@ const ServiceCard = styled.article`
   position: relative;
   border: 3px solid ${props => props.theme.colorWhite};
   margin-bottom: calc(1% + 88px);
-`;
+`
 
-const ServiceCardTitleDiv   = styled.div`
+const ServiceCardTitleDiv = styled.div`
   display: flex;
   background-size: cover;
   position: absolute;
@@ -28,27 +29,33 @@ const ServiceCardTitleDiv   = styled.div`
   height: 175px;
   margin: 0 auto;
   width: 175px;
-`;
+`
 
 const ServiceCardTitle = styled.h2`
   color: ${props => props.theme.colorWhite};
   font-size: 3rem;
-`;
+`
 
-const ServiceCardText  = styled.p `
+const ServiceCardText = styled.p`
   color: ${props => props.theme.colorWhite};
   margin-top: 2%;
-`;
+`
 
-export default (props) => {
-  const {title, image, text} = props;
+class ServiceCard extends Component {
+  render() {
+    const { title, image, text } = this.props
 
-  return(
-    <ServiceCard>
-      <ServiceCardTitleDiv style={{ background: `url(${image}) no-repeat center` }}>
-        <ServiceCardTitle>{title}</ServiceCardTitle>
-      </ServiceCardTitleDiv>
-      <ServiceCardText>{text}</ServiceCardText>
-    </ServiceCard>
-  )
-};
+    return (
+      <ServiceCardDiv id="service-card">
+        <ServiceCardTitleDiv
+          style={{ background: `url(${image}) no-repeat center` }}
+        >
+          <ServiceCardTitle>{title}</ServiceCardTitle>
+        </ServiceCardTitleDiv>
+        <ServiceCardText>{text}</ServiceCardText>
+      </ServiceCardDiv>
+    )
+  }
+}
+
+export default ServiceCard
