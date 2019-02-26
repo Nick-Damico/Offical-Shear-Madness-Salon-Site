@@ -1,56 +1,81 @@
 import React, { Component } from 'react'
-import CardContainer from 'ServiceCards'
+import { TweenMax, Power1, TimelineLite } from 'gsap/TweenMax'
+import styled from 'styled-components'
+import ServiceCard from './ServiceCard'
+import HairCircle from '../../images/hair-circle.png'
+import MakeupCircle from '../../images/makeup-circle.png'
+import BridalCircle from '../../images/bridal-circle.png'
+
+const CardContainer = styled.div`
+  justify-content: space-around;
+  &:first-child {
+    margin-bottom: 50px;
+  }
+  &:last-child {
+    background-color: ${props => props.theme.primaryColor};
+  }
+
+  @media (min-width: 699px) {
+    &:last-child {
+      background-color: transparent;
+    }
+  }
+`
 
 class ServiceCardContainer extends Component {
   constructor() {
     super()
-    // IntersectionObserver target element, starts animation
-    this.target = document.querySelector('#service-card')
-    this.serviceCards = document.querySelectorAll('')
-
-    this.setState = {
-      tweenCollection: [],
-    }
+    // Target trigger element for animating .service-card's
+    this.target = null
+    this.tweenCollection = []
+    this.animateCards = this.animateCards.bind(this)
   }
 
   initializeObserver() {
     let options = {
       root: null,
       rootMargin: '0px',
-      threshold: 1.0,
+      threshold: 0.5,
     }
+    this.target = document.querySelector('#service-card__container')
     let observer = new IntersectionObserver(this.animateCards, options)
+
     observer.observe(this.target)
   }
 
   componentDidMount() {
-    this.initializeObserver();
+    let nodesArray = [].slice.call(document.querySelectorAll('.service-card'))
+    this.initializeObserver()
 
-    let tweenCollection = this.stylistCards.map((card, i) => {
-      TweenMax.fromTo(
-        card,
-        1.2,
-        { bottom: -300, opacity: 0 },
-        { bottom: 0, opacity: 1, delay: 0.5, ease: Power1.easeOut }
-      ).pause()
-    })
-
-    this.setState({
-      tweenCollection: [...this.tweenCollection, tweenCollection],
+    nodesArray.forEach((card, i) => {
+      this.tweenCollection = TweenMax.staggerFromTo(
+        nodesArray,
+        1.3,
+        { bottom: -50, opacity: 0 },
+        {
+          bottom: 0,
+          opacity: 1,
+          delay: 0.5,
+          ease: Power1.easeOut,
+          paused: true,
+        },
+        0.5
+      )
     })
   }
 
   animateCards(entries, self) {
-    if (entries[0].intersectionRatio === 1) {
-      this.tM1.play()
-      this.tM2.play()
-      self.unobserve(entries[0].target)
+    let tweenCollection = this.tweenCollection
+    let target = this.target
+    if (entries[0].intersectionRatio > 0.5) {
+      tweenCollection.forEach(tween => tween.play())
+      self.unobserve(this.target)
     }
   }
-  
+
   render() {
-    return(
-      <CardContainer className="row">
+    return (
+      <CardContainer id="service-card__container" className="row">
         <ServiceCard
           title="Hair"
           image={HairCircle}
