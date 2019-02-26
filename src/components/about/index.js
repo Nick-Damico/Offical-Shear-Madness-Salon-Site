@@ -2,11 +2,8 @@ import React from 'react'
 import styled from 'styled-components'
 import { StaticQuery } from 'gatsby'
 import AboutIntro from './AboutIntro'
-import ServiceCard from './ServiceCard'
+import ServiceCardContainer from './ServiceCardContainer'
 import StylistCard from './stylistCard'
-import HairCircle from '../../images/hair-circle.png'
-import MakeupCircle from '../../images/makeup-circle.png'
-import BridalCircle from '../../images/bridal-circle.png'
 import StylistPic from '../../images/stylist.png'
 import HairdryerSvg from '../../images/hairdryer-graphic.svg'
 
@@ -88,30 +85,7 @@ export default () => (
       <About id="about">
         <AboutIntro />
         <AboutSection>
-          <CardContainer className="row">
-            <ServiceCard
-              title="Hair"
-              image={HairCircle}
-              text="We are Sevier Counties best full service beauty salon. We offer styles and cuts for everyone. Coloring, make-up, bridal, beards, and more."
-            />
-            <ServiceCard
-              title="Make-Up"
-              image={MakeupCircle}
-              text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed consequat
-    auctor magna nec molestie.Sed blandit eros a
-    massa iaculis iaculis. Mauris fringilla
-    nisi sit amet orci lacinia."
-            />
-            <ServiceCard
-              title="Bridal"
-              image={BridalCircle}
-              text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed consequat
-    auctor magna nec molestie.Sed blandit eros a
-    massa iaculis iaculis. Mauris fringilla
-    nisi sit amet orci lacinia."
-            />
-          </CardContainer>
-
+        <ServiceCardContainer />
           <StylistContainer>
             <TitleContainer>
               <SectionTitle>Stylists</SectionTitle>
