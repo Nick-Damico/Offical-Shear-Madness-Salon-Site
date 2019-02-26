@@ -1,6 +1,5 @@
 import React, { Component } from 'react'
 import styled from 'styled-components'
-import { TweenMax, Power1 } from 'gsap/TweenMax'
 
 const ServiceCardDiv = styled.article`
   background-color: ${props => props.theme.primaryColor};
@@ -41,12 +40,9 @@ const ServiceCardText = styled.p`
   margin-top: 2%;
 `
 
-class ServiceCard extends Component {
-  render() {
-    const { title, image, text } = this.props
-
+const ServiceCard = ({title, image, text}) => {
     return (
-      <ServiceCardDiv id="service-card">
+      <ServiceCardDiv className="service-card">
         <ServiceCardTitleDiv
           style={{ background: `url(${image}) no-repeat center` }}
         >
@@ -55,7 +51,6 @@ class ServiceCard extends Component {
         <ServiceCardText>{text}</ServiceCardText>
       </ServiceCardDiv>
     )
-  }
 }
 
 export default ServiceCard
