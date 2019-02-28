@@ -89,6 +89,10 @@ const Icon = styled.img`
     width: ${props => (props.logo ? '200px' : '55px')};
     font-size: 1.6rem;
   }
+
+  @media (min-width: 999px) {
+    width: ${props => (props.logo ? '300px' : '55px')};
+  }
 `
 
 // Export of Class Component
@@ -140,7 +144,7 @@ export class Navigation extends React.Component {
   render() {
     const logoItem = (
       <MobileItem href="#home">
-        <Icon logo src={Logo} alt="Shear Madness Beauty Salon" />
+        <Icon style={{paddingTop: '40px'}} logo src={Logo} alt="Shear Madness Beauty Salon" />
       </MobileItem>
     )
     return (

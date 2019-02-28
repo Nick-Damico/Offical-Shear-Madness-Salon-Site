@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import styled from 'styled-components'
 import { StaticQuery } from 'gatsby'
 import { TweenMax } from 'gsap/TweenMax'
-import bg from '../../images/shearmadness.png'
+import bg from '../../images/shear_madness_header_img.jpg'
 import logo from '../../images/logo.svg'
 
 const Header = styled.header`
@@ -19,7 +19,7 @@ const Header = styled.header`
   flex-direction: column;
   height: 96vh;
   min-height: 400px;
-  max-height: 690px;
+  /* max-height: 690px; */
   text-align: center;
   width: 100%;
   padding-left: 5%;
