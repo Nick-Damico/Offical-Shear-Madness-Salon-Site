@@ -9,7 +9,7 @@ export const theme = {
   secondaryColor: '#C062DA',
   linearGradient: 'linear-gradient(135deg, #c062da 0%,#61b5c1 100%)',
   transparentGradient:
-    'linear-gradient(135deg, rgba(55, 241, 182, 0.3) 20%,rgba(162,0,255,0.3) 60%)',
+    'linear-gradient(135deg, rgba(55, 241, 182, 0.2) 20%,rgba(162,0,255,0.3) 60%)',
   darkerGradient:
     'linear-gradient(135deg, rgba(55, 241, 182, 0.60) 20%,rgba(162,0,255,0.6) 60%)',
   colorBlack: '#333',
