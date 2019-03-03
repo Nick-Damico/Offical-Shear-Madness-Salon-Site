@@ -1,9 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
 import ServiceList from './ServiceList'
-import bgImg from '../../images/blackboard.jpg';
 import servicesBanner from '../../images/services-banner.svg';
-import servicesBorder from '../../images/services-border.png';
 import barnwoodTexture from '../../images/barnwood-texture.png';
 import bgColor from '../../images/pink-dust.png';
 
