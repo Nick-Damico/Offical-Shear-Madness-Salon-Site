@@ -3,13 +3,14 @@ import styled from 'styled-components'
 import { StaticQuery } from 'gatsby'
 import { TweenMax } from 'gsap/TweenMax'
 import bg from '../../images/shear_madness_header_v2.jpg'
+import bgSmall from '../../images/shear_madness_header-small.jpg'
 import logo from '../../images/logo.svg'
 
 const Header = styled.header`
   display: flex;
   position: relative;
   background: ${props => props.theme.linearGradient};
-  background: ${props => props.theme.transparentGradient}, url(${bg});
+  background: ${props => props.theme.transparentGradient}, url(${bgSmall});
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
@@ -27,6 +28,11 @@ const Header = styled.header`
 
   @media (min-width: 430px) {
     padding-top: 80px;
+  }
+
+  @media (min-width: 600px) {
+    background: ${props => props.theme.transparentGradient}, url(${bg}) center;
+    background-size: cover;
   }
 `
 
