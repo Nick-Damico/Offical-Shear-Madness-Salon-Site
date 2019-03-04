@@ -1,21 +1,28 @@
-import React from 'react';
-import styled from 'styled-components';
+import React from 'react'
+import styled from 'styled-components'
+import _ from 'lodash'
 
-const ReviewCard = styled.figure`
+const ReviewCard = styled.div`
   padding: 4% 4% 1% 4%;
-`;
+  height: 250px;
+  background-color: ${props => props.theme.secondaryColor}
+  display: flex !important;
+  flex-direction: column !important;
+`
 
-const ReviewInner = styled.div `
+const ReviewInner = styled.div`
   display: flex;
-  justify-content: center;
+  flex-direction: row;
   align-items: center;
-`;
+  justify-content: flex-start;
+  margin-bottom: 10px;
+`
 
 const ReviewPic = styled.img`
   border: 3px solid ${props => props.theme.colorWhite};
   border-radius: 50%;
-  width: 64px;
-`;
+  width: 60px;
+`
 
 const ReviewUsername = styled.h4`
   color: ${props => props.theme.colorBlack};
@@ -23,23 +30,45 @@ const ReviewUsername = styled.h4`
   margin-left: 4%;
   font-size: 2rem;
   font-weight: 100;
-`;
+`
 
-const ReviewText = styled.p`
+const ReviewText = styled.q`
   color: ${props => props.theme.colorBlack};
   font-size: 1rem;
-`;
+`
 
-export default (props) => {
-  const {image, username, review} = props;
-  console.log(image);
+const LinkContainer = styled.div`
+  text-align: right;
+  margin-top: auto;
+`
+
+const FacebookLink = styled.a`
+  display: block;
+  padding: 5px 10px;
+  cursor: pointer;
+  color: ${props => props.theme.colorBlack}
+  text-decoration: underline;
+`
+
+export default props => {
+  const { image, imageLg, username, review, className } = props
+
   return (
-    <ReviewCard>
+    <ReviewCard className={className}>
       <ReviewInner>
-        <ReviewPic src={require(`../../images/reviewerphotos/${image}`)} alt={username} />
+        <ReviewPic
+          src={require(`../../images/reviewerphotos/${image}`)}
+          srcset={require(`../../images/reviewerphotos/${imageLg}`) + '2x'}
+          alt={username}
+        />
         <ReviewUsername>{username}</ReviewUsername>
       </ReviewInner>
-      <ReviewText>{review}</ReviewText>
+      <ReviewText>{_.truncate(review, { length: '180' })}</ReviewText>
+      <LinkContainer>
+        <FacebookLink href="https://www.facebook.com/pg/shearmadness941/reviews/">
+          Read Full Review on Facebook
+        </FacebookLink>
+      </LinkContainer>
     </ReviewCard>
-  );
-};
+  )
+}

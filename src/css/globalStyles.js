@@ -2,6 +2,7 @@ import { injectGlobal } from 'styled-components'
 import styledNormalize from 'styled-normalize'
 import fontFiles from '../fonts/fonts.js'
 import bg from '../images/pink-dust.png'
+import arrow from '../images/arrow.svg'
 
 export const theme = {
   fontSignPainter: 'SignPainter',
@@ -70,6 +71,11 @@ injectGlobal`
     margin-bottom: 1rem;
   }
 
+  .center-text {
+    text-align: center;
+  }
+
+  // Grid Styles
   .row {
     display: flex;
     flex-flow: row wrap;
@@ -80,13 +86,44 @@ injectGlobal`
     height: 50px;
     width: 50px;
   }
-  .div-1 {background-color: teal}
-  .div-2 {background-color: tomato}
-  .div-3 {background-color: lightgreen}
-  .div-4 {background-color: goldenrod}
-  .div-5 {background-color: orange}
-  .div-6 {background-color: violet}
-  .div-7 {background-color: cornflowerblue}
-  .div-8 {background-color: tan}
+
+  // Slick-Carousel Styles
+  .slick-slide {
+    margin: 0 5px;
+    display: flex;
+    justify-content: stretch;
+  }
+
+  .slick-prev:before,
+  .slick-next:before {
+    position: absolute;
+    margin: auto;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-image: url(${arrow});
+    background-repeat: no-repeat;
+    background-size: 15px;
+    content: "" !important;
+
+  }
+
+  .slick-prev:before {
+    transform: rotate(180deg);
+  }
+
+  // Slick Carousel Review Cards
+  .color-even {
+    background-color: #C062DA !important;
+  }
+
+  .color-odd {
+    background-color: #61B5C1 !important;
+  }
+
+  .color-even q {
+    color: white;
+  }
 
 `

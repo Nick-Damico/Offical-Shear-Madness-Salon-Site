@@ -8,7 +8,7 @@ import Layout from '../components/layout'
 import { Navigation } from '../components/navigation'
 import Header from '../components/header/index'
 import About from '../components/about/index'
-import PhotoReviews from '../components/photoReviewGrid/index'
+import Reviews from '../components/reviews/ReviewsContainer'
 import Services from '../components/services/index'
 import Location from '../components/location/index'
 import Footer from '../components/footer/index'
@@ -26,7 +26,7 @@ export default () => (
     <Header />
     <Main>
       <About />
-      <PhotoReviews />
+      <Reviews />
       <Services />
       <Location />
       <GoogleMap />
