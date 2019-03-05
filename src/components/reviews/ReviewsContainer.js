@@ -10,9 +10,11 @@ import { StaticQuery, graphql } from 'gatsby'
 import ReviewCard from './ReviewCard'
 
 const isEven = value => {
-  if (value % 2 == 0) return true
+  if (value % 2 === 0) return true
   else return false
 }
+
+const HeadingContainer = styled.div``
 
 const ReviewContainer = styled.section`
   margin-top: -1px;
@@ -33,13 +35,6 @@ const ReviewTitle = styled.h2`
     font-size: 2.4rem;
   }
 `
-
-const HeadingContainer = styled.div`
-  /* border-top-color: ${props => props.theme.primaryColor};
-  border-top-style: solid;
-  border-top-width: 4px; */
-`
-
 const Heart = styled.span`
   color: ${props => props.theme.secondaryColor};
 `
@@ -92,7 +87,7 @@ class ReviewsContainer extends Component {
             centerPadding: '40px',
             slidesToShow: 1,
           },
-        }
+        },
       ],
     })
   }
