@@ -18,6 +18,8 @@
     "gatsby-source-filesystem": "^1.5.39",
     "gatsby-transformer-json": "^1.0.20",
     "gsap": "^2.0.2",
+    "jquery": "^3.3.1",
+    "lightbox2": "^2.10.0",
     "node-sass": "^4.11.0",
     "react": "^16.4.2",
     "react-dom": "^16.4.2",
@@ -25,6 +27,7 @@
     "react-helmet": "^5.2.0",
     "react-scrollmagic": "^2.1.0",
     "react-typography": "^0.16.13",
+    "slick-carousel": "^1.8.1",
     "styled-components": "^3.4.5",
     "styled-normalize": "^8.0.0",
     "typography": "^0.16.17"
