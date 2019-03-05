@@ -1,9 +1,9 @@
 import React from 'react'
 import styled from 'styled-components'
 import ServiceList from './ServiceList'
-import servicesBanner from '../../images/services-banner.svg';
-import barnwoodTexture from '../../images/barnwood-texture.png';
-import bgColor from '../../images/pink-dust.png';
+import servicesBanner from '../../images/services-banner.svg'
+import barnwoodTexture from '../../images/barnwood-texture.png'
+import bgColor from '../../images/pink-dust.png'
 
 const SERVICES = [
   {
@@ -41,14 +41,13 @@ const SERVICES = [
       { type: 'Brows on Fleek', price: '12' },
       { type: 'Sayonara Stache', price: '7' },
       { type: 'Chinny Chin Chin', price: '10/12' },
-      { type: 'ByeBye, Burnin\' Love Burns', price: '8' },
+      { type: "ByeBye, Burnin' Love Burns", price: '8' },
       { type: 'The Whole Enchilada', price: '34' },
     ],
-  }
+  },
 ]
 
-const Container
- = styled.div`
+const Container = styled.div`
   background: url(${barnwoodTexture});
 `
 
@@ -95,19 +94,17 @@ const Col = styled.div`
 `
 
 export default () => {
-  let serviceLists = SERVICES.map((service,index) => (
+  let serviceLists = SERVICES.map((service, index) => (
     <Col key={`service-${index}`}>
       <ServiceList service={service} />
     </Col>
-  ));
+  ))
 
   return (
     <Container>
       <Section id="services">
-      <SectionHeading src={servicesBanner} alt="Shear Madness Services" />
-      <Row className="row">
-      { serviceLists }
-      </Row>
+        <SectionHeading src={servicesBanner} alt="Shear Madness Services" />
+        <Row className="row">{serviceLists}</Row>
       </Section>
     </Container>
   )
