@@ -51,7 +51,8 @@ injectGlobal`
     line-height: 1.4;
     font-weight: 400;
     font-family: Raleway, sans-serif;
-    background: url(${bg}) repeat;
+    // background: url(${bg}) repeat;
+    background: ${theme.colorWhite};
   }
 
   p {
