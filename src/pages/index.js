@@ -9,10 +9,11 @@ import { Navigation } from '../components/navigation'
 import Header from '../components/header/index'
 import About from '../components/about/index'
 import Reviews from '../components/reviews/ReviewsContainer'
+import Gallery from '../components/gallery/index'
 import Services from '../components/services/index'
 import Location from '../components/location/index'
-import Footer from '../components/footer/index'
 import GoogleMap from '../components/GoogleMap'
+import Footer from '../components/footer/index'
 
 const Main = styled.main`
   display: flex;
@@ -27,6 +28,7 @@ export default () => (
     <Main>
       <About />
       <Reviews />
+      <Gallery />
       <Services />
       <Location />
       <GoogleMap />
