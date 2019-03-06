@@ -8,6 +8,8 @@ import BridalCircle from '../../images/bridal-circle.png'
 
 const CardContainer = styled.div`
   justify-content: space-around;
+  width: 95%;
+  margin: 0 auto;
   &:first-child {
     margin-bottom: 50px;
   }
