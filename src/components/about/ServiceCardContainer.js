@@ -52,12 +52,11 @@ class ServiceCardContainer extends Component {
     nodesArray.forEach((card, i) => {
       this.tweenCollection = TweenMax.staggerFromTo(
         nodesArray,
-        1.3,
+        1,
         { bottom: -50, opacity: 0 },
         {
           bottom: 0,
-          opacity: 1,
-          delay: 0.5,
+          opacity: 1,          
           ease: Power1.easeOut,
           paused: true,
         },
