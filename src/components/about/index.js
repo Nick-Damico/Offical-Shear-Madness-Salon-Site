@@ -4,8 +4,6 @@ import { StaticQuery } from 'gatsby'
 import AboutIntro from './AboutIntro'
 import ServiceCardContainer from './ServiceCardContainer'
 import StylistCardContainer from './StylistCardContainer'
-import StylistCard from './stylistCard'
-import StylistPic from '../../images/stylist.png'
 import HairdryerSvg from '../../images/hairdryer-graphic.svg'
 
 const About = styled.div`

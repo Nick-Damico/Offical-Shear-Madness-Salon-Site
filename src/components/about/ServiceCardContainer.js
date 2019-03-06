@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { TweenMax, Power1, TimelineLite } from 'gsap/TweenMax'
+import { TweenMax, Power1 } from 'gsap/TweenMax'
 import styled from 'styled-components'
 import ServiceCard from './ServiceCard'
 import HairCircle from '../../images/hair-circle.png'
@@ -72,7 +72,7 @@ class ServiceCardContainer extends Component {
 
   animateCards(entries, self) {
     let tweenCollection = this.tweenCollection
-    let target = this.target
+    
     if (entries[0].intersectionRatio > 0.5) {
       tweenCollection.forEach(tween => tween.play())
       self.unobserve(this.target)

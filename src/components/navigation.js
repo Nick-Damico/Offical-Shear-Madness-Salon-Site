@@ -1,7 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
 import { TweenMax } from 'gsap'
-import ScrollToPlugin from 'gsap/ScrollToPlugin'
 
 // Import icons for navigation
 import homeIcon from '../images/home-icon.svg'
