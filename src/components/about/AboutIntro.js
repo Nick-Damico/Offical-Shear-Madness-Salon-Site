@@ -19,9 +19,15 @@ const AboutIntroSection = styled.section`
 
 const AboutText = styled.p`
   max-width: 750px;
+  font-size: 0.875rem;
+  line-height: 1.5;
   width: 90%;
   margin: 0 auto;
   padding-bottom: 40px;
+  @media (min-width: 900px) {
+    font-size: 1rem;
+    line-height: 1.5
+  }
 `
 
 const FirstCharacter = styled.span`

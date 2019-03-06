@@ -7,12 +7,11 @@ import MakeupCircle from '../../images/makeup-circle.png'
 import BridalCircle from '../../images/bridal-circle.png'
 
 const CardContainer = styled.div`
+  display: flex;
+  flew-direction: row;
+  flex-wrap: wrap;
   justify-content: space-around;
-  width: 95%;
-  margin: 0 auto;
-  &:first-child {
-    margin-bottom: 50px;
-  }
+
   &:last-child {
     background-color: ${props => props.theme.primaryColor};
   }
@@ -20,6 +19,12 @@ const CardContainer = styled.div`
   @media (min-width: 699px) {
     &:last-child {
       background-color: transparent;
+    }
+  }
+
+  @media (min-width: 799px) {
+    &:first-child {
+      margin-bottom: 50px;
     }
   }
 `
@@ -56,7 +61,7 @@ class ServiceCardContainer extends Component {
         { bottom: -50, opacity: 0 },
         {
           bottom: 0,
-          opacity: 1,          
+          opacity: 1,
           ease: Power1.easeOut,
           paused: true,
         },
@@ -76,7 +81,7 @@ class ServiceCardContainer extends Component {
 
   render() {
     return (
-      <CardContainer id="service-card__container" className="row">
+      <CardContainer id="service-card__container">
         <ServiceCard
           title="Hair"
           image={HairCircle}

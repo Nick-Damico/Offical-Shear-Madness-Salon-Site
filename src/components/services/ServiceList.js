@@ -11,6 +11,7 @@ const ColHeading = styled.h3`
 
 const ServiceList = styled.ul`
   color: ${props => props.theme.colorWhite};
+  font-weight: 300;
   list-style: none;
   text-align: center;
 `
