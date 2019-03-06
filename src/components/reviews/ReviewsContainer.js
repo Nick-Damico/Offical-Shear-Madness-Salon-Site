@@ -103,7 +103,7 @@ class ReviewsContainer extends Component {
           <Hr />
         </HeadingContainer>
         <div
-          style={{ width: '95%', margin: '0 auto' }}
+          style={{ width: '95%', margin: '0 auto', maxWidth: '1200px' }}
           ref={this.carousel}
           className="slick-carousel__container"
         >

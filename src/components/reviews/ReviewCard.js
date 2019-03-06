@@ -66,7 +66,7 @@ export default props => {
       <ReviewText>{_.truncate(review, { length: '180' })}</ReviewText>
       <LinkContainer>
         <FacebookLink href="https://www.facebook.com/pg/shearmadness941/reviews/">
-          Read Full Review on Facebook
+          Full Review on Facebook
         </FacebookLink>
       </LinkContainer>
     </ReviewCard>
