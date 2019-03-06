@@ -4,11 +4,9 @@ import styled from 'styled-components'
 const GalleryImg = styled.img`
   width: 100%;
   display: flex;
-  opacity: 0.8;
-  transform: opacity 0.8s ease-in-out;
 
   &:hover {
-    opacity: 1;
+    opacity: 1 !important;
   }
 `
 

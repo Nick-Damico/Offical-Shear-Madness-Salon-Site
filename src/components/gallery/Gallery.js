@@ -92,8 +92,8 @@ class Gallery extends Component {
     let target = ref.current
     let childEl = target.firstChild
     // let $parent = $target.parent()
-    TweenMax.fromTo(target, 2, { opacity: 0 }, { opacity: 1 })
-    TweenMax.fromTo(childEl, 2.5, { opacity: 0 }, { opacity: 0.85 })
+    TweenMax.fromTo(target, 1.5, { opacity: 0 }, { opacity: 1 })
+    TweenMax.fromTo(childEl, 2, { opacity: 0 }, { opacity: 0.85 })
   }
 
   render() {
