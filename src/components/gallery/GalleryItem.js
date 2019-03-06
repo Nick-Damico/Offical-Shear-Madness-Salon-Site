@@ -20,13 +20,15 @@ const GalleryItem = styled.a`
   }
 `
 
-export default ({ imageSml, imageSml2x, imageLg, imageLg2x, alt }) => {
-
+export default ({ imageSml, imageSml2x, imageLg, imageLg2x, alt,handleLoad }) => {
+  let itemRef = React.createRef()
   return (
     <GalleryItem
       className="col"
       href={require(`../../images/gallery-preview/${imageLg}`)}
       data-lightbox="gallery1"
+      innerRef={itemRef}
+      onLoad={e => handleLoad(e,itemRef)}
     >
       <GalleryImg
         src={require(`../../images/gallery-preview/${imageSml}`)}
