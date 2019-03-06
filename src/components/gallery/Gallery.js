@@ -1,10 +1,10 @@
-import React from 'react'
-import styled from 'styled-components'
+import React, { Component } from 'react'
+import { TweenMax } from 'gsap/TweenMax'
 import GalleryItem from './GalleryItem'
-import $ from 'jquery'
+import galleryImages from './galleryImages'
+import styled from 'styled-components'
 import 'lightbox2'
 import 'lightbox2/dist/css/lightbox.min.css'
-import galleryImages from './galleryImages'
 
 const HeadingContainer = styled.div``
 
@@ -12,6 +12,7 @@ const GalleryContainer = styled.div`
   width: 95%;
   max-width: 1200px;
   margin: 0 auto;
+  padding: 20px 0 30px 0;
 `
 
 const SectionTitle = styled.h2`
@@ -65,27 +66,67 @@ const Row = styled.div`
   }
 `
 
-export default () => {
-  let images = galleryImages.map((image, i) => (
-    <GalleryItem
-      key={`gallery-item-${i}`}
-      imageSml={image.imageSml}
-      imageSml2x={image.imageSml2x}
-      imageLg={image.imageLg}
-      imageLg2x={image.imageLg2x}
-      alt={image.alt}
-    />
-  ))
+const Button = styled.button`
+  display: flex;
+  margin: 0 auto;
+  padding: 8px 10px;
+  background: pink;
+  margin-top: 15px;
+`
 
-  return (
-    <section id="gallery">
-      <HeadingContainer className="review-container__heading center-text">
-        <SectionTitle>Salon Styles</SectionTitle>
-        <Hr />
-      </HeadingContainer>
-      <GalleryContainer>
-        <Row>{images}</Row>
-      </GalleryContainer>
-    </section>
-  )
+class Gallery extends Component {
+  constructor() {
+    super()
+
+    this.state = {
+      currentImageCount: 9,
+    }
+  }
+
+  increaseDisplayedPhotos = () => {
+    let count = 6
+    this.setState({ currentImageCount: this.state.currentImageCount + count })
+  }
+
+  handleLoad(e,ref) {
+    let target = ref.current
+    let childEl = target.firstChild
+    // let $parent = $target.parent()
+    TweenMax.fromTo(target, 2, { opacity: 0 }, { opacity: 1 })
+    TweenMax.fromTo(childEl, 2.5, { opacity: 0 }, { opacity: 0.85 })
+  }
+
+  render() {
+    let images = galleryImages
+      .slice(0, this.state.currentImageCount)
+      .map((image, i) => (
+        <GalleryItem
+          key={`gallery-item-${i}`}
+          class="gallery-item"
+          imageSml={image.imageSml}
+          imageSml2x={image.imageSml2x}
+          imageLg={image.imageLg}
+          imageLg2x={image.imageLg2x}
+          alt={image.alt}
+          handleLoad={this.handleLoad}
+        />
+      ))
+
+    return (
+      <section id="gallery">
+        <HeadingContainer className="review-container__heading center-text">
+          <SectionTitle>Salon Styles</SectionTitle>
+          <Hr />
+        </HeadingContainer>
+        <GalleryContainer>
+          <Row>{images}</Row>
+          <Button onClick={this.increaseDisplayedPhotos}>
+            Load More Photos
+          </Button>
+        </GalleryContainer>
+      </section>
+    )
+  }
 }
+
+export default Gallery
