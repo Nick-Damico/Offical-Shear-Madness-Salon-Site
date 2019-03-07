@@ -2,7 +2,7 @@ import React from 'react'
 import styled from 'styled-components'
 import ServiceList from './ServiceList'
 import servicesBanner from '../../images/services-banner.svg'
-import barnwoodTexture from '../../images/barnwood-texture.png'
+import barnwoodTexture from '../../images/barnwood-texture.jpg'
 import bgColor from '../../images/pink-dust.png'
 
 const SERVICES = [

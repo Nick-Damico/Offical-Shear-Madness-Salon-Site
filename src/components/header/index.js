@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import styled from 'styled-components'
 import { StaticQuery } from 'gatsby'
 import { TweenMax } from 'gsap/TweenMax'
-import bg from '../../images/shear_madness_header_v2.jpg'
+import bg from '../../images/header-bg.jpg'
 import bgSmall from '../../images/shear_madness_header-small.jpg'
 import logo from '../../images/logo.svg'
 
