@@ -4,7 +4,7 @@ import StylistCard from './stylistCard'
 import StylistPic from '../../images/stylist.png'
 
 const StylistContainer = styled.div`
-  background-color: ${props => props.theme.primaryColor};
+  background-color: transparent;
 
   @media (min-width: 699px) {
     background-color: transparent;
@@ -18,8 +18,8 @@ const TitleContainer = styled.div`
   padding: 1%;
   text-align: center;
 
-  @media (min-width: 699px) {
-    text-align: left;
+  @media (min-width: 799px) {
+    /* text-align: left; */
   }
 `
 
@@ -33,9 +33,6 @@ const CardContainer = styled.div`
   justify-content: space-around;
   &:first-child {
     margin-bottom: 50px;
-  }
-  &:last-child {
-    background-color: ${props => props.theme.primaryColor};
   }
 
   @media (min-width: 699px) {

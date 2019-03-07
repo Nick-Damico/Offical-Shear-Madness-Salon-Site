@@ -72,7 +72,7 @@ class ServiceCardContainer extends Component {
 
   animateCards(entries, self) {
     let tweenCollection = this.tweenCollection
-    
+
     if (entries[0].intersectionRatio > 0.5) {
       tweenCollection.forEach(tween => tween.play())
       self.unobserve(this.target)

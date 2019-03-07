@@ -4,7 +4,8 @@ import { StaticQuery } from 'gatsby'
 import AboutIntro from './AboutIntro'
 import ServiceCardContainer from './ServiceCardContainer'
 import StylistCardContainer from './StylistCardContainer'
-import HairdryerSvg from '../../images/hairdryer-graphic.svg'
+import HairdryerSVG from '../../images/hairdryer-graphic.svg'
+import HairdryerSVGSmall from '../../images/hairdryer-graphic-small.svg'
 
 const About = styled.div`
   background-color: white;
@@ -13,10 +14,19 @@ const About = styled.div`
 const AboutSection = styled.section`
   padding: 150px 0 0 0;
   margin-bottom: -50px;
+  background-color: white;
+  background: url(${HairdryerSVGSmall}) no-repeat;
+  background-size: cover;
+  background-position-x: 40%;
+  background-position-y: 15px;
 
-  @media (min-width: 699px) {
+  @media (min-width: 599px ) {
+    background-position-x: 60%;
+  }
+
+  @media (min-width: 799px) {
     background-color: white;
-    background: url(${HairdryerSvg}) no-repeat;
+    background: url(${HairdryerSVG}) no-repeat;
     background-size: cover;
     background-position-x: 18px;
   }
