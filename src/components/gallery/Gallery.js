@@ -67,6 +67,7 @@ const Row = styled.div`
 `
 
 const Button = styled.button`
+  cursor: pointer;
   display: flex;
   margin: 0 auto;
   padding: 8px 10px;

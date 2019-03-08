@@ -67,6 +67,10 @@ const MobileItem = styled.a`
   @media (min-width: 699px) {
     font-size: 2rem;
     text-shadow: ${props => props.theme.textShadow};
+
+    &:hover img.icon {
+      transform: translateY(8px);
+    }
   }
 `
 
@@ -149,20 +153,20 @@ export class Navigation extends React.Component {
     return (
       <Nav innerRef={this.nav}>
         <MobileItem onClick={this.scrollTo} href="#home">
-          <Icon src={homeIcon} alt="" />
+          <Icon className="icon" src={homeIcon} alt="Home Section" />
           Home
         </MobileItem>
         <MobileItem onClick={this.scrollTo} href="#about">
-          <Icon src={aboutIcon} alt="" />
+          <Icon className="icon" src={aboutIcon} alt="About Section" />
           About
         </MobileItem>
         {!this.state.mobile ? logoItem : null}
         <MobileItem onClick={this.scrollTo} href="#services">
-          <Icon src={serviceIcon} alt="" />
+          <Icon className="icon" src={serviceIcon} alt="Services Section" />
           Services
         </MobileItem>
         <MobileItem onClick={this.scrollTo} href="#contact">
-          <Icon src={contactIcon} alt="" />
+          <Icon className="icon" src={contactIcon} alt="Contact Section" />
           Contact
         </MobileItem>
       </Nav>
