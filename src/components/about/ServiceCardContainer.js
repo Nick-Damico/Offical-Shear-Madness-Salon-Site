@@ -85,23 +85,27 @@ class ServiceCardContainer extends Component {
         <ServiceCard
           title="Hair"
           image={HairCircle}
-          text="We are Sevier Counties best full service beauty salon. We offer styles and cuts for everyone. Coloring, make-up, bridal, beards, and more."
+          text="We offer a great variety of hair services, from a simple shampoo
+          & style to advanced hair cutting. We're very well versed in all color
+          techniques as well... We can cover those pesky grays or give you that perfect balayagé you've
+          been wanting. We pride ourselves in staying current, so come let us give you the
+          hair you'll love to wear."
         />
         <ServiceCard
           title="Make-Up"
           image={MakeupCircle}
-          text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed consequat
-      auctor magna nec molestie.Sed blandit eros a
-      massa iaculis iaculis. Mauris fringilla
-      nisi sit amet orci lacinia."
+          text="Natural Face, or Full Glam? Either way, we've got you covered, literaly.
+          We do regular makeup set to last All day. We also offer airbrush makeup applications. Airbrush
+          is great for more coverage or troubled skin. Regardless of the application you choose, you'll
+          be ready for any event."
         />
         <ServiceCard
           title="Bridal"
           image={BridalCircle}
-          text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed consequat
-      auctor magna nec molestie.Sed blandit eros a
-      massa iaculis iaculis. Mauris fringilla
-      nisi sit amet orci lacinia."
+          text="Come let us doll you up on your big day! We know this day can be stressful on a bride,
+          and we're here to help ease the 'Get Ready' process. We'll take the classic, the vintage,
+          the belle, and even the boujéé. We want you to feel beautiful on your special day. Call to book
+          your hair and makeup appointment with us today!"
         />
       </CardContainer>
     )
