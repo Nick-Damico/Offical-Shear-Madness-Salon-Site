@@ -4,7 +4,7 @@ import _ from 'lodash'
 
 const ReviewCard = styled.div`
   padding: 4% 4% 1% 4%;
-  height: 250px;
+  height: 280px !important;
   background-color: ${props => props.theme.secondaryColor}
   display: flex !important;
   flex-direction: column !important;
