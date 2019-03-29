@@ -46,7 +46,7 @@ const FacebookLink = styled.a`
   display: block;
   padding: 5px 10px;
   cursor: pointer;
-  color: ${props => props.theme.colorBlack}
+  color: ${props => props.theme.colorBlack};
   text-decoration: underline;
 `
 

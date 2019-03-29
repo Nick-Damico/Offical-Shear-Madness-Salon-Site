@@ -2,7 +2,7 @@
 // Located in 'css/globalStyles.js'
 import React, { Component } from 'react'
 import $ from 'jquery'
-import 'slick-carousel'
+import '../../library/slick-carousel/slick/slick.js'
 import 'slick-carousel/slick/slick-theme.css'
 import 'slick-carousel/slick/slick.css'
 import styled from 'styled-components'
@@ -25,7 +25,7 @@ const ReviewContainer = styled.section`
 const ReviewTitle = styled.h2`
   position: relative;
   display: inline-block;
-  color: ${props => props.theme.primaryColor}
+  color: ${props => props.theme.primaryColor};
   background: white;
   font-size: 2.2rem;
   padding: 8px 10px;

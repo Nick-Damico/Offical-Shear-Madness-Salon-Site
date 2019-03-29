@@ -18,8 +18,8 @@ const GalleryContainer = styled.div`
 const SectionTitle = styled.h2`
   position: relative;
   display: inline-block;
-  color: ${props => props.theme.primaryColor}
-  background: white;
+  color: ${props => props.theme.primaryColor};
+  background-color: white !important;
   font-size: 2.2rem;
   padding: 8px 10px;
   z-index: 90;

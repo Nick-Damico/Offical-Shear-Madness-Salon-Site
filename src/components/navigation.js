@@ -119,29 +119,35 @@ export class Navigation extends React.Component {
     target = target.nodeName !== "A" ? target.parentElement : target;
     let sectionAnchor = target.getAttribute('href')
 
-    TweenMax.to(window, 1, { scrollTo: { y: sectionAnchor, offsetY: 0 } })
+    if (typeof window !== 'undefined') {
+      TweenMax.to(window, 1, { scrollTo: { y: sectionAnchor, offsetY: 0 } })
+    }
   }
 
   handleResize() {
-    if (window.innerWidth > 429 && this.state.mobile) {
-      this.setState({
-        mobile: false,
-      })
-    } else if (window.innerWidth < 430 && !this.state.mobile) {
-      this.setState({
-        mobile: true,
-      })
+    if (typeof window !== 'undefined') {
+      if (window.innerWidth > 429 && this.state.mobile) {
+        this.setState({
+          mobile: false,
+        })
+      } else if (window.innerWidth < 430 && !this.state.mobile) {
+        this.setState({
+          mobile: true,
+        })
+      }
     }
   }
 
   componentDidMount() {
-    window.addEventListener('resize', this.handleResize, {passive: false});
-    if (window.innerWidth < 430) {
-      this.setState({
-        mobile: true,
-      });
+    if (typeof window !== 'undefined') {
+      window.addEventListener('resize', this.handleResize, {passive: false});
+      if (window.innerWidth < 430) {
+        this.setState({
+          mobile: true,
+        });
+      }
+      TweenMax.to(this.nav.current, 1, { opacity: 1, delay: 0.8 });
     }
-    TweenMax.to(this.nav.current, 1, { opacity: 1, delay: 0.8 });
   }
 
   render() {
