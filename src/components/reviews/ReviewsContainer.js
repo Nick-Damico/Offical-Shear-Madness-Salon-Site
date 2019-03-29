@@ -2,7 +2,7 @@
 // Located in 'css/globalStyles.js'
 import React, { Component } from 'react'
 import $ from 'jquery'
-import '../../library/slick-carousel/slick/slick.js'
+import 'slick-carousel'
 import 'slick-carousel/slick/slick-theme.css'
 import 'slick-carousel/slick/slick.css'
 import styled from 'styled-components'
