@@ -10,6 +10,7 @@ import contactIcon from '../images/contact-icon.svg'
 import Logo from '../images/logo.svg'
 
 // Styled Components
+const plugins = [ ScrollToPlugin ]
 const Nav = styled.nav`
   position: fixed;
   background: ${props => props.theme.primaryColor};
