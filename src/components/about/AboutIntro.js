@@ -71,6 +71,10 @@ class AboutIntro extends Component {
   }
 
   componentDidMount() {
+    if ('IntersectionObserver' in window &&
+    'IntersectionObserverEntry' in window &&
+    'intersectionRatio' in window.IntersectionObserverEntry.prototype) {
+    // load polyfill now
     let options = {
       root: null,
       rootMargin: '0px',
@@ -89,9 +93,12 @@ class AboutIntro extends Component {
       { opacity: 0 },
       { opacity: 1, delay: 1.6 }
     ).pause()
+
     let observer = new IntersectionObserver(this.animateText, options)
     let target = document.querySelector('#about-intro')
     observer.observe(target)
+    }
+
   }
 
   render() {

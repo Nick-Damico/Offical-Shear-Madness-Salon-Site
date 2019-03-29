@@ -39,15 +39,20 @@ class ServiceCardContainer extends Component {
   }
 
   initializeObserver() {
-    let options = {
-      root: null,
-      rootMargin: '0px',
-      threshold: 0.5,
-    }
-    this.target = document.querySelector('#service-card__container')
-    let observer = new IntersectionObserver(this.animateCards, options)
+    if ('IntersectionObserver' in window &&
+    'IntersectionObserverEntry' in window &&
+    'intersectionRatio' in window.IntersectionObserverEntry.prototype) {
+      let options = {
+        root: null,
+        rootMargin: '0px',
+        threshold: 0.5,
+      }
+      this.target = document.querySelector('#service-card__container')
+      let observer = new IntersectionObserver(this.animateCards, options)
 
-    observer.observe(this.target)
+      observer.observe(this.target)
+    }
+
   }
 
   componentDidMount() {
