@@ -111,7 +111,7 @@ class AboutIntro extends Component {
           <AboutText innerRef={this.text}>
             <FirstCharacter>S</FirstCharacter>
             <ColorText>hear Madness Salon</ColorText> specializes in advanced
-            hair cutting, coloring, make up application, formal & bridal services.
+            hair cutting, coloring, makeup application, formal & bridal services.
             Our staff bring their own skills and specialties, we stay up with current
             trends, so we can keep you current and looking your best. Serving Gatlinburg,
             Pigeon Forge, Sevierville and all of Sevier County. Come here where a

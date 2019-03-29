@@ -92,7 +92,7 @@ class ServiceCardContainer extends Component {
           hair you'll love to wear."
         />
         <ServiceCard
-          title="Make-Up"
+          title="MakeUp"
           image={MakeupCircle}
           text="Natural Face, or Full Glam? Either way, we've got you covered, literaly.
           We do regular makeup set to last All day. We also offer airbrush makeup applications. Airbrush

@@ -135,7 +135,7 @@ export class Navigation extends React.Component {
   }
 
   componentDidMount() {
-    window.addEventListener('resize', this.handleResize);
+    window.addEventListener('resize', this.handleResize, {passive: false});
     if (window.innerWidth < 430) {
       this.setState({
         mobile: true,
