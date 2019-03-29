@@ -39,9 +39,11 @@ class ServiceCardContainer extends Component {
   }
 
   initializeObserver() {
-    if ('IntersectionObserver' in window &&
-    'IntersectionObserverEntry' in window &&
-    'intersectionRatio' in window.IntersectionObserverEntry.prototype) {
+    if (
+      'IntersectionObserver' in window &&
+      'IntersectionObserverEntry' in window &&
+      'intersectionRatio' in window.IntersectionObserverEntry.prototype
+    ) {
       let options = {
         root: null,
         rootMargin: '0px',
@@ -52,27 +54,32 @@ class ServiceCardContainer extends Component {
 
       observer.observe(this.target)
     }
-
   }
 
   componentDidMount() {
-    let nodesArray = [].slice.call(document.querySelectorAll('.service-card'))
-    this.initializeObserver()
+    if (
+      'IntersectionObserver' in window &&
+      'IntersectionObserverEntry' in window &&
+      'intersectionRatio' in window.IntersectionObserverEntry.prototype
+    ) {
+      let nodesArray = [].slice.call(document.querySelectorAll('.service-card'))
+      this.initializeObserver()
 
-    nodesArray.forEach((card, i) => {
-      this.tweenCollection = TweenMax.staggerFromTo(
-        nodesArray,
-        1,
-        { bottom: -50, opacity: 0 },
-        {
-          bottom: 0,
-          opacity: 1,
-          ease: Power1.easeOut,
-          paused: true,
-        },
-        0.5
-      )
-    })
+      nodesArray.forEach((card, i) => {
+        this.tweenCollection = TweenMax.staggerFromTo(
+          nodesArray,
+          1,
+          { bottom: -50, opacity: 0 },
+          {
+            bottom: 0,
+            opacity: 1,
+            ease: Power1.easeOut,
+            paused: true,
+          },
+          0.5
+        )
+      })
+    }
   }
 
   animateCards(entries, self) {

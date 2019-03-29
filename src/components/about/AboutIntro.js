@@ -26,7 +26,7 @@ const AboutText = styled.p`
   padding-bottom: 40px;
   @media (min-width: 900px) {
     font-size: 1rem;
-    line-height: 1.5
+    line-height: 1.5;
   }
 `
 
@@ -71,34 +71,35 @@ class AboutIntro extends Component {
   }
 
   componentDidMount() {
-    if ('IntersectionObserver' in window &&
-    'IntersectionObserverEntry' in window &&
-    'intersectionRatio' in window.IntersectionObserverEntry.prototype) {
-    // load polyfill now
-    let options = {
-      root: null,
-      rootMargin: '0px',
-      threshold: 1.0,
+    if (
+      'IntersectionObserver' in window &&
+      'IntersectionObserverEntry' in window &&
+      'intersectionRatio' in window.IntersectionObserverEntry.prototype
+    ) {
+      // load polyfill now
+      let options = {
+        root: null,
+        rootMargin: '0px',
+        threshold: 1.0,
+      }
+
+      this.tM1 = TweenMax.fromTo(
+        this.textCard.current,
+        1.2,
+        { bottom: -300 },
+        { bottom: 0, delay: 0.5, ease: Power1.easeOut }
+      ).pause()
+      this.tM2 = TweenMax.fromTo(
+        this.text.current,
+        1.3,
+        { opacity: 0 },
+        { opacity: 1, delay: 1.6 }
+      ).pause()
+
+      let observer = new IntersectionObserver(this.animateText, options)
+      let target = document.querySelector('#about-intro')
+      observer.observe(target)
     }
-
-    this.tM1 = TweenMax.fromTo(
-      this.textCard.current,
-      1.2,
-      { bottom: -300 },
-      { bottom: 0, delay: 0.5, ease: Power1.easeOut }
-    ).pause()
-    this.tM2 = TweenMax.fromTo(
-      this.text.current,
-      1.3,
-      { opacity: 0 },
-      { opacity: 1, delay: 1.6 }
-    ).pause()
-
-    let observer = new IntersectionObserver(this.animateText, options)
-    let target = document.querySelector('#about-intro')
-    observer.observe(target)
-    }
-
   }
 
   render() {
@@ -118,11 +119,11 @@ class AboutIntro extends Component {
           <AboutText innerRef={this.text}>
             <FirstCharacter>S</FirstCharacter>
             <ColorText>hear Madness Salon</ColorText> specializes in advanced
-            hair cutting, coloring, makeup application, formal & bridal services.
-            Our staff bring their own skills and specialties, we stay up with current
-            trends, so we can keep you current and looking your best. Serving Gatlinburg,
-            Pigeon Forge, Sevierville and all of Sevier County. Come here where a
-            great hair cut is priceless.
+            hair cutting, coloring, makeup application, formal & bridal
+            services. Our staff bring their own skills and specialties, we stay
+            up with current trends, so we can keep you current and looking your
+            best. Serving Gatlinburg, Pigeon Forge, Sevierville and all of
+            Sevier County. Come here where a great hair cut is priceless.
           </AboutText>
         </div>
       </AboutIntroSection>
