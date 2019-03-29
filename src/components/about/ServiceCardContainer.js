@@ -52,26 +52,27 @@ class ServiceCardContainer extends Component {
 
   componentDidMount() {
     let nodesArray = [].slice.call(document.querySelectorAll('.service-card'))
-    nodesArray.forEach((card, i) => {
-      this.tweenCollection = TweenMax.staggerFromTo(
-        nodesArray,
-        1,
-        { bottom: -50, opacity: 0 },
-        {
-          bottom: 0,
-          opacity: 1,
-          ease: Power1.easeOut,
-          paused: true,
-        },
-        0.5
-      )
-    })
 
     if (
       'IntersectionObserver' in window &&
       'IntersectionObserverEntry' in window &&
       'intersectionRatio' in window.IntersectionObserverEntry.prototype
     ) {
+      nodesArray.forEach((card, i) => {
+        this.tweenCollection = TweenMax.staggerFromTo(
+          nodesArray,
+          1,
+          { bottom: -50, opacity: 0 },
+          {
+            bottom: 0,
+            opacity: 1,
+            ease: Power1.easeOut,
+            paused: true,
+          },
+          0.5
+        )
+      })
+      
       this.initializeObserver()
     }
   }

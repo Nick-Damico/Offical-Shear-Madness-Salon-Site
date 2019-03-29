@@ -50,11 +50,18 @@ const FacebookLink = styled.a`
   text-decoration: underline;
 `
 
+const FlexWrap = styled.div`
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+`
+
 export default props => {
   const { image, imageLg, username, review, className } = props
 
   return (
     <ReviewCard className={className}>
+      <FlexWrap>
       <ReviewInner>
         <ReviewPic
           src={require(`../../images/reviewerphotos/${image}`)}
@@ -69,6 +76,7 @@ export default props => {
           Full Review on Facebook
         </FacebookLink>
       </LinkContainer>
+      </FlexWrap>
     </ReviewCard>
   )
 }

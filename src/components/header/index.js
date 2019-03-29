@@ -213,7 +213,7 @@ class MainHeader extends Component {
             </div>
             <CtaContainer innerRef={this.CTA}>
               <CtaText>Make Appointment</CtaText>
-              <AptButton>(865) 366-1357</AptButton>
+              <AptButton href="tel:8653661357">(865) 366-1357</AptButton>
             </CtaContainer>
           </Header>
         )}
