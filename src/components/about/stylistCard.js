@@ -49,7 +49,7 @@ const StylistName = styled.h2`
   background-color: ${props => props.theme.secondaryColor};
   font-size: 2.5rem;
   text-align: center;
-  z-index: 100;
+  z-index: 90;
   margin: 0 auto ;
 `;
 

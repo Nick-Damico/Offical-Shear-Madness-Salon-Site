@@ -56,17 +56,20 @@ const Section = styled.section`
   background: url(${bgColor});
   box-shadow: 0 6px 12px 8px rgba(32, 51, 50, 0.8);
   border: 4px solid white;
-  padding: 30px 0;
-  margin: 30px 20px;
+  padding: 30px 5px;
+  margin: 30px 5px;
   text-align: center;
 
+  @media (min-width: 399px) {
+    margin: 30px 20px;
+  }
   @media (min-width: 695px) {
     margin: 50px 40px;
   }
 `
 
 const SectionHeading = styled.img`
-  width: 300px;
+  width: 250px;
   margin-bottom: 20px;
   @media (min-width: 400px) {
     width: 300px;

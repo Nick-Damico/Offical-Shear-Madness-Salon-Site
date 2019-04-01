@@ -88,6 +88,15 @@ class ReviewsContainer extends Component {
             slidesToShow: 1,
           },
         },
+        {
+          breakpoint: 400,
+          settings: {
+            arrows: false,
+            centerMode: true,
+            centerPadding: '20px',
+            slidesToShow: 1,
+          },
+        }
       ],
     })
   }
