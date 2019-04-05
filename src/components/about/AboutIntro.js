@@ -48,7 +48,11 @@ const ColorText = styled.span`
 const Heading = styled.h2`
   text-align: center;
   color: ${props => props.theme.primaryColor};
-  font-size: 2rem;
+  font-size: 1.7rem;
+
+  @media (min-width: 380px) {
+    font-size: 2rem;
+  }
 `
 
 class AboutIntro extends Component {

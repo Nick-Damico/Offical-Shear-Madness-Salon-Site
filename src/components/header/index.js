@@ -27,12 +27,13 @@ const Header = styled.header`
   padding-right: 5%;
 
   @media (min-width: 430px) {
-    padding-top: 80px;
+    padding-top: 145px;
   }
 
   @media (min-width: 600px) {
     background: ${props => props.theme.transparentGradient}, url(${bg}) center;
     background-size: cover;
+    padding-top: 90px;
   }
 `
 
