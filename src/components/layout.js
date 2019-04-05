@@ -35,7 +35,7 @@ export default ({ children }) => (
         <Helmet
           title={`${
             data.site.siteMetadata.title
-          } | Full Service Beauty Salon serving Gatlinburg, Pigeon Forge, Sevierville, and all of Sevier County.`}
+          } | A Full service beauty and bridal hair salon. Specializing in current trend hairstyles for men and women. Serving Gatlinburg, Pigeon Forge, Sevierville, and all of Sevier County.`}
           meta={[
             {
               name: 'description',
