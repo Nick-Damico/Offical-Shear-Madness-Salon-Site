@@ -1,5 +1,6 @@
 module.exports = {
   siteMetadata: {
+    siteUrl: 'https://shearmadnessbeauty.com/',
     title: 'Shear Madness Beauty Salon',
     slogan: '"Where a Great Haircut is Priceless."',
   },
@@ -35,5 +36,6 @@ module.exports = {
     `gatsby-plugin-polyfill-io`,
     'gatsby-plugin-offline',
     'gatsby-plugin-styled-components',
+    'gatsby-plugin-robots-txt'
   ],
 }
