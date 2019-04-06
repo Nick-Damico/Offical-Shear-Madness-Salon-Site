@@ -98,9 +98,10 @@ export default () => {
         <Col>
           <HeadingTitle>Shear Madness</HeadingTitle>
           <FooterText>
-            We are Sevier Counties best full service beauty salon. We offer
-            styles and cuts for everyone both men and women. Coloring, make-up,
-            bridal, beards, and more.
+            A full service beauty, bridal, and hair salon serving Gatlinburg,
+            Pigeon Forge, Sevierville,
+            and all of Sevier County. Hair Styles and cuts for everyone, hair
+            highlights, coloring, bridal, waxing, tanning, and more.
           </FooterText>
         </Col>
         <Col>
