@@ -1,6 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
-import { TweenMax } from 'gsap/all'
+import { TweenMax,  ScrollToPlugin } from 'gsap/all'
 
 // Import icons for navigation
 import homeIcon from '../images/home-icon.svg'
@@ -10,6 +10,7 @@ import contactIcon from '../images/contact-icon.svg'
 import Logo from '../images/logo.svg'
 
 // Styled Components
+const plugins = [ ScrollToPlugin ]
 const Nav = styled.nav`
   position: fixed;
   background: ${props => props.theme.primaryColor};
