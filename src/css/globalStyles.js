@@ -1,5 +1,4 @@
 import { injectGlobal } from 'styled-components'
-import styledNormalize from 'styled-normalize'
 import fontFiles from '../fonts/fonts.js'
 import bg from '../images/pink-dust.png'
 import arrow from '../images/arrow.svg'
@@ -19,7 +18,6 @@ export const theme = {
 }
 
 injectGlobal`
-  ${styledNormalize}
   @import url('https://fonts.googleapis.com/css?family=Raleway:100,300,400,700');
   @font-face {
    font-family: "SignPainter";

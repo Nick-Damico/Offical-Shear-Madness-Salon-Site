@@ -2,9 +2,14 @@
 // Located in 'css/globalStyles.js'
 import React, { Component } from 'react'
 import $ from 'jquery'
-import 'slick-carousel'
-import 'slick-carousel/slick/slick-theme.css'
-import 'slick-carousel/slick/slick.css'
+// COMMENT OUT BEFORE RUNNING GATSBY BUILD
+// import 'slick-carousel'
+// import 'slick-carousel/slick/slick-theme.css'
+// import 'slick-carousel/slick/slick.css'
+// UNCOMMENT OUT BEFORE RUNNING GATSBY BUILD
+import '../../library/slick-carousel'
+import '../../library/slick-carousel/slick/slick-theme.css'
+import '../../library/slick-carousel/slick/slick.css'
 import styled from 'styled-components'
 import { StaticQuery, graphql } from 'gatsby'
 import ReviewCard from './ReviewCard'

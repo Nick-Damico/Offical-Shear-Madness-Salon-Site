@@ -30,9 +30,9 @@ const SERVICES = [
   {
     name: 'Bridal Services',
     services: [
-      { type: 'Updo & Classic Makeup', price: '125' },
-      { type: 'Updo & Airbrush Makeup', price: '150' },
-      { type: 'Flower Girl Updo', price: '50' },
+      { type: 'Updo & Classic Makeup', price: '150' },
+      { type: 'Updo & Airbrush Makeup', price: '175' },
+      { type: 'Flower Girl Updo', price: '60' },
     ],
   },
   {

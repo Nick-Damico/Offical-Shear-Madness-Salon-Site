@@ -3,8 +3,12 @@ import { TweenMax } from 'gsap/TweenMax'
 import GalleryItem from './GalleryItem'
 import galleryImages from './galleryImages'
 import styled from 'styled-components'
-import 'lightbox2'
-import 'lightbox2/dist/css/lightbox.min.css'
+// COMMENT OUT BEFORE RUNNING GATSBY BUILD
+// import 'lightbox2'
+// import 'lightbox2/dist/css/lightbox.min.css'
+// UNCOMMENT WHEN RUNNING GATSBY BUILD FOR PRODUCTION
+import '../../library/lightbox2'
+import '../../library/lightbox2/dist/css/lightbox.min.css'
 
 const HeadingContainer = styled.div``
 
@@ -69,6 +73,8 @@ const Row = styled.div`
 const Button = styled.button`
   cursor: pointer;
   display: flex;
+  font-size: 1.2rem;
+  font-weight: 100;
   margin: 0 auto;
   padding: 8px 10px;
   background: pink;
